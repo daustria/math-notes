@@ -16,18 +16,28 @@ Smooth Manifolds
 	:titlesonly:
 	:glob:
    
-	smooth_manifolds/*
+todo
 
-Complex Analysis
-=================
+Analysis
+=========
 
 .. image:: images/conformality.png
 	:scale: 80%
 	:align: center
 
-todo.
+.. toctree::
+	:maxdepth: 2
+	:titlesonly:
+	:glob:
+
+	analysis/*
 
 Analytic Number Theory
 ======================
 
-todo.
+.. toctree::
+	:maxdepth: 2
+	:titlesonly:
+	:glob:
+
+	analytic_nt/*

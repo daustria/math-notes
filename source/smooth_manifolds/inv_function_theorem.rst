@@ -1,3 +1,0 @@
-The Inverse Function Theorem
-============================
-
