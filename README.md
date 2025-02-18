@@ -1,1 +1,1 @@
-Personal notes of selected math topics.
+Personal notes of selected math topics..
