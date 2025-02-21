@@ -71,7 +71,7 @@ in the limit by direct computation,
 The integral on the right hand side is equivalent to :math:`\int_{0}^{\pi} x^{-R \sin t}\,dt` and we analyze in this form instead. Split this integral
 into three parts, the same way as the previous case. The middle integral is bounded above by :math:`(\pi - 2\epsilon)x^{-R \sin \epsilon}`, and the
 other two integrals at most :math:`\epsilon`. Letting :math:`\epsilon` and :math:`R` tend to zero shows that 
-the entire integral vanishes in the limit.
+the entire integral vanishes in the limit :math:`\blacksquare`. 
 
 Another approach of integrating this function involves rectangular contours instead of semi circle arcs. For example, when :math:`0 < x < 1` our contour is the positively oriented
 rectangle with corners at :math:`c-iR, c+iR, \sigma+iR, \sigma-iR`, and we let :math:`\sigma` tend to :math:`\infty`. This approach we won't show, but it can
@@ -101,3 +101,20 @@ This discontinuous integral can be used to extract coefficients from a Dirichlet
 
 	.. math::
 		\sum_{n < x} a_n = \frac{1}{2 \pi i} \int_{(c)} f(s) \frac{x^s}{s}\,ds.
+
+.. note: 
+	We often write :math:`s = \sigma + it`, denoting :math:`\sigma,t` as the real and imginary parts of :math:`s`.
+
+The assumptions are enough to show that :math:`f(s)` converges uniformly on the half plane :math:`\sigma > c - \epsilon`, which
+justifies term by term integration.
+
+.. math::
+
+	\begin{align}
+	\frac{1}{2 \pi i} \int_{(c)} f(s) \frac{x^s}{s}\,ds &= \frac{1}{2 \pi i} \int_{(c)} \sum _{n \geq 1} \frac{a_n}{n^s} \frac{x^s }{s} ds \\
+	&= \frac{1}{2 \pi i} \sum_{n \geq 1} a_n \int_{(c)} \frac{(x/n)^s}{s}\,ds \\
+	&= \sum_{n \geq 1} a_n \delta(x/n) \\
+	&= \sum_{n < x} a_n
+	\end{align}
+
+as required :math:`\blacksquare`.

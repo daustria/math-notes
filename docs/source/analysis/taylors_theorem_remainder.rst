@@ -69,8 +69,7 @@ in the right hand side of :math:`g_i` as a smooth function :math:`F(x,t)` on :ma
 
 Furthermore the integrand on the right hand side is smooth, from smoothness of :math:`g`. In general, we can compute partial derivatives of 
 :math:`g_i` of arbitrary order by repeatedly applying Leibniz rule, to obtain a function of the form :math:`\int_0^1 F(x,t)\,dt` where :math:`F` 
-is smooth on its domain. Leibniz rule also guarantees that such a function has continuous partial derivaties of the first order. So 
-:math:`g_i` has continuous partial derivatives of all orders and is therefore smooth (also need to show :math:`g` itself is continuous, probably).
+is smooth on its domain. So it suffices to show that such a function is continuous, and has continuous partial derivatives.
 
 To obtain the existence of the :math:`g_i`, we perform a similar computation as the previous theorem. 
 
