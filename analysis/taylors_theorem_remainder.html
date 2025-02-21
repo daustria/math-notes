@@ -86,8 +86,7 @@ in the right hand side of <span class="math notranslate nohighlight">\(g_i\)</sp
 \[\frac{\partial g_i}{\partial x_j} = \frac{\partial}{\partial x_j} \int_0^1 F(x,t)\,dt = \int_0^1 \frac{\partial}{\partial x_j} F(x,t)\,dt.\]</div>
 <p>Furthermore the integrand on the right hand side is smooth, from smoothness of <span class="math notranslate nohighlight">\(g\)</span>. In general, we can compute partial derivatives of
 <span class="math notranslate nohighlight">\(g_i\)</span> of arbitrary order by repeatedly applying Leibniz rule, to obtain a function of the form <span class="math notranslate nohighlight">\(\int_0^1 F(x,t)\,dt\)</span> where <span class="math notranslate nohighlight">\(F\)</span>
-is smooth on its domain. Leibniz rule also guarantees that such a function has continuous partial derivaties of the first order. So
-<span class="math notranslate nohighlight">\(g_i\)</span> has continuous partial derivatives of all orders and is therefore smooth (also need to show <span class="math notranslate nohighlight">\(g\)</span> itself is continuous, probably).</p>
+is smooth on its domain. So it suffices to show that such a function is continuous, and has continuous partial derivatives.</p>
 <p>To obtain the existence of the <span class="math notranslate nohighlight">\(g_i\)</span>, we perform a similar computation as the previous theorem.</p>
 <div class="math notranslate nohighlight">
 \[g(x) - g(a) = \int_0^1 \frac{d}{dt} g(a + t(x-a)) = \sum_{i=1}^n (x^i - a^i) \int_0^1 \frac{\partial g}{\partial x_i}(a + t(x-a))\,dt\]</div>

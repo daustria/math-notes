@@ -83,7 +83,7 @@ in the limit by direct computation,</p>
 <p>The integral on the right hand side is equivalent to <span class="math notranslate nohighlight">\(\int_{0}^{\pi} x^{-R \sin t}\,dt\)</span> and we analyze in this form instead. Split this integral
 into three parts, the same way as the previous case. The middle integral is bounded above by <span class="math notranslate nohighlight">\((\pi - 2\epsilon)x^{-R \sin \epsilon}\)</span>, and the
 other two integrals at most <span class="math notranslate nohighlight">\(\epsilon\)</span>. Letting <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(R\)</span> tend to zero shows that
-the entire integral vanishes in the limit.</p>
+the entire integral vanishes in the limit <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
 <p>Another approach of integrating this function involves rectangular contours instead of semi circle arcs. For example, when <span class="math notranslate nohighlight">\(0 &lt; x &lt; 1\)</span> our contour is the positively oriented
 rectangle with corners at <span class="math notranslate nohighlight">\(c-iR, c+iR, \sigma+iR, \sigma-iR\)</span>, and we let <span class="math notranslate nohighlight">\(\sigma\)</span> tend to <span class="math notranslate nohighlight">\(\infty\)</span>. This approach we won’t show, but it can
 be found in a few classical texts (like the one by Davenport I think). The advantage of this approach is that it can be used to obtain some approximations that will be helpful later on.</p>
@@ -107,6 +107,16 @@ c/R &amp; x = 1
 <div class="math notranslate nohighlight">
 \[\sum_{n &lt; x} a_n = \frac{1}{2 \pi i} \int_{(c)} f(s) \frac{x^s}{s}\,ds.\]</div>
 </div>
+<p>The assumptions are enough to show that <span class="math notranslate nohighlight">\(f(s)\)</span> converges uniformly on the half plane <span class="math notranslate nohighlight">\(\sigma &gt; c - \epsilon\)</span>, which
+justifies term by term integration.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{1}{2 \pi i} \int_{(c)} f(s) \frac{x^s}{s}\,ds &amp;= \frac{1}{2 \pi i} \int_{(c)} \sum _{n \geq 1} \frac{a_n}{n^s} \frac{x^s }{s} ds \\
+&amp;= \frac{1}{2 \pi i} \sum_{n \geq 1} a_n \int_{(c)} \frac{(x/n)^s}{s}\,ds \\
+&amp;= \sum_{n \geq 1} a_n \delta(x/n) \\
+&amp;= \sum_{n &lt; x} a_n
+\end{align}\end{split}\]</div>
+<p>as required <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
 </div>
 
 
