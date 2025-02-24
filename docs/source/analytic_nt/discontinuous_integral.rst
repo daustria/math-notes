@@ -102,7 +102,7 @@ This discontinuous integral can be used to extract coefficients from a Dirichlet
 	.. math::
 		\sum_{n < x} a_n = \frac{1}{2 \pi i} \int_{(c)} f(s) \frac{x^s}{s}\,ds.
 
-.. note: 
+.. hint::
 	We often write :math:`s = \sigma + it`, denoting :math:`\sigma,t` as the real and imginary parts of :math:`s`.
 
 The assumptions are enough to show that :math:`f(s)` converges uniformly on the half plane :math:`\sigma > c - \epsilon`, which

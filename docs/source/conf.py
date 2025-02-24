@@ -22,6 +22,12 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+html_theme_options = {
+	'fixed_sidebar': True
+}
+html_css_files = [
+	'custom.css'
+]
 
 # -- LaTeX cuztomization ----------------------------------------------------
 latex_engine = 'xelatex'
