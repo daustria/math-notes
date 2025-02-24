@@ -6,39 +6,21 @@ readings and lectures rather than taking their place. So they are going to be te
 where they ought to have more detail, or they may be sprinkled with many of my own personal thoughts
 that are perhaps helpful to nobody but myself. Most of the material will be advanced undergraduate or beginner graduate level.
 
-Smooth Manifolds
-=================
-
-.. image:: images/sphere.png
-	:align: center
-
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+	:hidden:
+	:caption: Real Analysis
 	:glob:
-   
-todo
+	:maxdepth: 1
 
-Analysis
-=========
+	real_analysis/*
 
-.. image:: images/conformality.png
-	:scale: 80%
-	:align: center
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
-	:glob:
-
-	analysis/*
-
-Analytic Number Theory
-======================
-
-.. toctree::
-	:maxdepth: 2
-	:titlesonly:
+	:hidden:
+	:caption: Analytic Number Theory
 	:glob:
 
 	analytic_nt/*
+
+.. image:: images/sphere.png
+	:align: center

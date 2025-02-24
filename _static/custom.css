@@ -1,1 +1,13 @@
-/* This file intentionally left blank. */
+p.caption {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: 0em;  
+    font-weight: bold;
+}
+
+li.toctree-l1 {
+    font-size: 0.7em;
+    list-style: none;
+    margin-bottom: 0.5em;
+    text-align: center;
+}

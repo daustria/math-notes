@@ -7,6 +7,7 @@
     <title>A Discontinuous Integral &#8212; math notes 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -15,7 +16,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Taylor’s Theorem with Remainder" href="../analysis/taylors_theorem_remainder.html" />
+    <link rel="prev" title="Taylor’s Theorem with Remainder" href="../real_analysis/taylors_theorem_remainder.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -23,9 +24,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">math notes</a></h1>
 
-    <div class="document">
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Real Analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../real_analysis/inv_function_theorem.html">The Inverse Function Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../real_analysis/taylors_theorem_remainder.html">Taylor’s Theorem with Remainder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Analytic Number Theory</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A Discontinuous Integral</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../real_analysis/taylors_theorem_remainder.html" title="previous chapter">Taylor’s Theorem with Remainder</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
           
@@ -107,6 +157,10 @@ c/R &amp; x = 1
 <div class="math notranslate nohighlight">
 \[\sum_{n &lt; x} a_n = \frac{1}{2 \pi i} \int_{(c)} f(s) \frac{x^s}{s}\,ds.\]</div>
 </div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>We often write <span class="math notranslate nohighlight">\(s = \sigma + it\)</span>, denoting <span class="math notranslate nohighlight">\(\sigma,t\)</span> as the real and imginary parts of <span class="math notranslate nohighlight">\(s\)</span>.</p>
+</div>
 <p>The assumptions are enough to show that <span class="math notranslate nohighlight">\(f(s)\)</span> converges uniformly on the half plane <span class="math notranslate nohighlight">\(\sigma &gt; c - \epsilon\)</span>, which
 justifies term by term integration.</p>
 <div class="math notranslate nohighlight">
@@ -124,56 +178,8 @@ justifies term by term integration.</p>
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">math notes</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../analysis/inv_function_theorem.html">The Inverse Function Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../analysis/taylors_theorem_remainder.html">Taylor’s Theorem with Remainder</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">A Discontinuous Integral</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../analysis/taylors_theorem_remainder.html" title="previous chapter">Taylor’s Theorem with Remainder</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
+    <div class="clearer"></div>
+  </div>
     <div class="footer">
       &copy;.
       
