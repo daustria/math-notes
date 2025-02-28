@@ -11,7 +11,7 @@ that are perhaps helpful to nobody but myself. Most of the material will be adva
 
 	| collapsible proofs, need to upgrade to sphinx >= 8.2 or edit css manually
 	| add misc section
-	| consider computer science topics aa
+	| consider computer science topics 
 
 .. toctree::
 	:hidden:
