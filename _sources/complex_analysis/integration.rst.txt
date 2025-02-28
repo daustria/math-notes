@@ -7,6 +7,9 @@ Not intended to be a complete discussion, reader is expected to have acquaintanc
 .. note:: A domain :math:`D` will refer to an open connected subset of the complex plane. Functions will usually have the form
    :math:`f: D \to \mathbb{C}` for some domain D.
 
+Our first theorem will connect the presence of an antiderivative with path independence and vanishing loop integrals.
+In fact these are equivalent in some sense.
+
 .. admonition:: Theorem
 
    Let :math:`f`  be continuous in a domain D. The following are equivalent:
@@ -17,7 +20,10 @@ Not intended to be a complete discussion, reader is expected to have acquaintanc
 
 We will prove (sketch) :math:`1 \implies 2 \implies 3 \implies 1`.
 
-:math:`1 \implies 2` is a version of the fundamental theorem of calculus. For the sake of presentation
+:math:`1 \implies 2`
+
+
+We can use a version of the fundamental theorem of calculus. For the sake of presentation
 assume that :math:`\Gamma` is a directed smooth curve (if not, run the proof on each of its components). Hence its 
 parameterization :math:`z(t) : [a,b] \to \mathbb{C}` is continuously differentiable. By the chain rule we have 
 
@@ -28,11 +34,15 @@ and so
 
 .. math::
 
-   \int_{\Gamma}f(z)\,dz = \int_a^b f(z(t))z'(t)\,dt = F(b) - F(a).
+   \int_{\Gamma}f(z)\,dz = \int_a^b f(z(t))z'(t)\,dt = F(z(b)) - F(z(a)).
 
-where the last equation is just an invocation of a small extension to the fundamental theorem of calculus for real variables. 
+where the last equation is just a small extension to the fundamental theorem of calculus for real valued functions, 
+easily proven. Since :math:`z(b)=z(a)` the above equation is 0, which is what we needed to show.
 
-For :math:`2 \implies 3` let :math:`z,w` be two points in our domain. Let :math:`\gamma_1, \gamma_2` be two distinct paths (contours) from :math:`z` to :math:`w`, entirely contained in :math:`D`.
+:math:`2 \implies 3` 
+
+
+Let :math:`z,w` be two points in our domain. Let :math:`\gamma_1, \gamma_2` be two distinct paths (contours) from :math:`z` to :math:`w`, entirely contained in :math:`D`.
 Let :math:`\Gamma` be the contour formed by appending :math:`-\gamma_2` to :math:`\gamma_1`. Then by hypothesis the integral of :math:`f` over :math:`\Gamma` vanishes. This is 
 exactly what we want since
 
@@ -40,7 +50,10 @@ exactly what we want since
 
    0 = \int_{\Gamma} f = \int_{\gamma_1}f - \int_{\gamma_2}f
 
-For :math:`3 \implies 1` fix a point :math:`x` in :math:`D` and define :math:`F(z) = \int_x^z f(s)\,ds` where the notation indicates
+:math:`3 \implies 1` 
+
+
+Fix a point :math:`x` in :math:`D` and define :math:`F(z) = \int_x^z f(s)\,ds` where the notation indicates
 integrating over a straight line from :math:`x` to :math:`z`. We must show that :math:`F` is differentiable and its derivative is :math:`f`, which can
 be done directly. Notice that :math:`x \to z+w \to z \to x` is a loop integral. So by our hypothesis we have
 
@@ -61,9 +74,9 @@ as :math:`w \to 0`. Parameterize the contour as :math:`z+wt` for :math:`0 \leq t
    \frac{1}{w} \int_0^1 f(z+wt)w\,dt = \int_0^1 f(z+wt)\,dt.
 
 
-Fianlly we have
+Finally we have
 
 .. math::
-   \int_0^1 f(z+wt)\,dt - f(z) = \int_0^1 f(z+wt)-f(z)\,dt \to 0
+   \int_0^1 f(z+wt)\,dt - f(z) = \int_0^1 f(z+wt)-f(z)\,dt
 
-as :math:`w \to 0` :math:`\blacksquare`.
+which tends to :math:`0` as :math:`w \to 0` by continuity of :math:`f` :math:`\blacksquare`.

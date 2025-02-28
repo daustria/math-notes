@@ -97,6 +97,8 @@ Not intended to be a complete discussion, reader is expected to have acquaintanc
 <p>A domain <span class="math notranslate nohighlight">\(D\)</span> will refer to an open connected subset of the complex plane. Functions will usually have the form
 <span class="math notranslate nohighlight">\(f: D \to \mathbb{C}\)</span> for some domain D.</p>
 </div>
+<p>Our first theorem will connect the presence of an antiderivative with path independence and vanishing loop integrals.
+In fact these are equivalent in some sense.</p>
 <div class="admonition-theorem admonition">
 <p class="admonition-title">Theorem</p>
 <p>Let <span class="math notranslate nohighlight">\(f\)</span>  be continuous in a domain D. The following are equivalent:</p>
@@ -107,21 +109,25 @@ Not intended to be a complete discussion, reader is expected to have acquaintanc
 </ol>
 </div>
 <p>We will prove (sketch) <span class="math notranslate nohighlight">\(1 \implies 2 \implies 3 \implies 1\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(1 \implies 2\)</span> is a version of the fundamental theorem of calculus. For the sake of presentation
+<p><span class="math notranslate nohighlight">\(1 \implies 2\)</span></p>
+<p>We can use a version of the fundamental theorem of calculus. For the sake of presentation
 assume that <span class="math notranslate nohighlight">\(\Gamma\)</span> is a directed smooth curve (if not, run the proof on each of its components). Hence its
 parameterization <span class="math notranslate nohighlight">\(z(t) : [a,b] \to \mathbb{C}\)</span> is continuously differentiable. By the chain rule we have</p>
 <div class="math notranslate nohighlight">
 \[\frac{d}{dt} F(z(t)) = f(z(t))z'(t)\]</div>
 <p>and so</p>
 <div class="math notranslate nohighlight">
-\[\int_{\Gamma}f(z)\,dz = \int_a^b f(z(t))z'(t)\,dt = F(b) - F(a).\]</div>
-<p>where the last equation is just an invocation of a small extension to the fundamental theorem of calculus for real variables.</p>
-<p>For <span class="math notranslate nohighlight">\(2 \implies 3\)</span> let <span class="math notranslate nohighlight">\(z,w\)</span> be two points in our domain. Let <span class="math notranslate nohighlight">\(\gamma_1, \gamma_2\)</span> be two distinct paths (contours) from <span class="math notranslate nohighlight">\(z\)</span> to <span class="math notranslate nohighlight">\(w\)</span>, entirely contained in <span class="math notranslate nohighlight">\(D\)</span>.
+\[\int_{\Gamma}f(z)\,dz = \int_a^b f(z(t))z'(t)\,dt = F(z(b)) - F(z(a)).\]</div>
+<p>where the last equation is just a small extension to the fundamental theorem of calculus for real valued functions,
+easily proven. Since <span class="math notranslate nohighlight">\(z(b)=z(a)\)</span> the above equation is 0, which is what we needed to show.</p>
+<p><span class="math notranslate nohighlight">\(2 \implies 3\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(z,w\)</span> be two points in our domain. Let <span class="math notranslate nohighlight">\(\gamma_1, \gamma_2\)</span> be two distinct paths (contours) from <span class="math notranslate nohighlight">\(z\)</span> to <span class="math notranslate nohighlight">\(w\)</span>, entirely contained in <span class="math notranslate nohighlight">\(D\)</span>.
 Let <span class="math notranslate nohighlight">\(\Gamma\)</span> be the contour formed by appending <span class="math notranslate nohighlight">\(-\gamma_2\)</span> to <span class="math notranslate nohighlight">\(\gamma_1\)</span>. Then by hypothesis the integral of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(\Gamma\)</span> vanishes. This is
 exactly what we want since</p>
 <div class="math notranslate nohighlight">
 \[0 = \int_{\Gamma} f = \int_{\gamma_1}f - \int_{\gamma_2}f\]</div>
-<p>For <span class="math notranslate nohighlight">\(3 \implies 1\)</span> fix a point <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(D\)</span> and define <span class="math notranslate nohighlight">\(F(z) = \int_x^z f(s)\,ds\)</span> where the notation indicates
+<p><span class="math notranslate nohighlight">\(3 \implies 1\)</span></p>
+<p>Fix a point <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(D\)</span> and define <span class="math notranslate nohighlight">\(F(z) = \int_x^z f(s)\,ds\)</span> where the notation indicates
 integrating over a straight line from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(z\)</span>. We must show that <span class="math notranslate nohighlight">\(F\)</span> is differentiable and its derivative is <span class="math notranslate nohighlight">\(f\)</span>, which can
 be done directly. Notice that <span class="math notranslate nohighlight">\(x \to z+w \to z \to x\)</span> is a loop integral. So by our hypothesis we have</p>
 <div class="math notranslate nohighlight">
@@ -132,10 +138,10 @@ be done directly. Notice that <span class="math notranslate nohighlight">\(x \to
 <p>as <span class="math notranslate nohighlight">\(w \to 0\)</span>. Parameterize the contour as <span class="math notranslate nohighlight">\(z+wt\)</span> for <span class="math notranslate nohighlight">\(0 \leq t \leq 1\)</span>. Then the integral becomes</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{w} \int_0^1 f(z+wt)w\,dt = \int_0^1 f(z+wt)\,dt.\]</div>
-<p>Fianlly we have</p>
+<p>Finally we have</p>
 <div class="math notranslate nohighlight">
-\[\int_0^1 f(z+wt)\,dt - f(z) = \int_0^1 f(z+wt)-f(z)\,dt \to 0\]</div>
-<p>as <span class="math notranslate nohighlight">\(w \to 0\)</span> <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+\[\int_0^1 f(z+wt)\,dt - f(z) = \int_0^1 f(z+wt)-f(z)\,dt\]</div>
+<p>which tends to <span class="math notranslate nohighlight">\(0\)</span> as <span class="math notranslate nohighlight">\(w \to 0\)</span> by continuity of <span class="math notranslate nohighlight">\(f\)</span> <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
 </div>
 
 
