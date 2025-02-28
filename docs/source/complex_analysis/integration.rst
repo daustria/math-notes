@@ -130,12 +130,13 @@ The loop integrals vanishing is the content of Cauchy's integral theorem, but ke
 	If :math:`f` is analytic in a simply connected domain :math:`D` and :math:`\Gamma` is a loop then :math:`\int_{\Gamma}f = 0`.
 
 
-What can we say if :math:`f` is analytic on a simply connected domain :math:`D`, but has a singularity? For example :math:`\frac{1}{z}` on the unit disk :math:`|z|<1`.
-In this case the above does not apply. For instance many texts establish early on that when :math:`C` is a circle centred at :math:`a` of some radius we have
+Now consider when :math:`f` is analytic on a simply connected domain :math:`D`, and we want to integrate :math:`f` over some closed contour, but it 
+has a singularity inside the contour, like :math:`\frac{1}{z}` on :math:`|z|<1`. In this setting, the above conditions do not apply. 
+Also, many texts establish early on that when :math:`C` is a circle centred at :math:`a` of some radius we have
 :math:`\int_C \frac{dz}{z-a}` is :math:`2 \pi i` when :math:`a` lies inside :math:`C` and :math:`0` otherwise.
 
 
-In this case, we appeal to Cauchy's integral formula.
+In this case, we will want to appeal to Cauchy's integral formula.
 
 .. admonition:: Theorem
 
