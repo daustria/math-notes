@@ -14,6 +14,13 @@ that are perhaps helpful to nobody but myself. Most of the material will be adva
 
 	real_analysis/*
 
+.. toctree::
+	:hidden:
+	:caption: Complex Analysis
+	:glob:
+	:maxdepth: 1
+
+        complex_analysis/*
 
 .. toctree::
 	:hidden:
