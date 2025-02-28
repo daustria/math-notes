@@ -6,6 +6,13 @@ readings and lectures rather than taking their place. So they are going to be te
 where they ought to have more detail, or they may be sprinkled with many of my own personal thoughts
 that are perhaps helpful to nobody but myself. Most of the material will be advanced undergraduate or beginner graduate level.
 
+..
+	Things to do:
+
+	| collapsible proofs, need to upgrade to sphinx >= 8.2 or edit css manually
+	| add misc section
+	| consider computer science topics 
+
 .. toctree::
 	:hidden:
 	:caption: Real Analysis
