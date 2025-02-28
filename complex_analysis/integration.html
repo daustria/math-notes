@@ -142,6 +142,50 @@ be done directly. Notice that <span class="math notranslate nohighlight">\(x \to
 <div class="math notranslate nohighlight">
 \[\int_0^1 f(z+wt)\,dt - f(z) = \int_0^1 f(z+wt)-f(z)\,dt\]</div>
 <p>which tends to <span class="math notranslate nohighlight">\(0\)</span> as <span class="math notranslate nohighlight">\(w \to 0\)</span> by continuity of <span class="math notranslate nohighlight">\(f\)</span> <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+<p>How do we check if all loop integrals vanish? One tool we can use is the deformation invariance theorem.</p>
+<div class="admonition-theorem-deformation-invariance admonition">
+<p class="admonition-title">Theorem (Deformation Invariance)</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be analytic in a domain D. If <span class="math notranslate nohighlight">\(\Gamma_0, \Gamma_1 \subset D\)</span> are two loops such that
+<span class="math notranslate nohighlight">\(\Gamma_0\)</span> can be continuously deformed into <span class="math notranslate nohighlight">\(\Gamma_1\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\int_{\Gamma_0} f(z)\,dz = \int_{\Gamma_1}f(z)\,dz.\]</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>By continuously deformed, we mean that there is a continuous function <span class="math notranslate nohighlight">\(z(s,t):[0,1] \times [0,1]\)</span> such that
+<span class="math notranslate nohighlight">\(z(0,t)\)</span> parameterizes <span class="math notranslate nohighlight">\(\Gamma_0\)</span> and <span class="math notranslate nohighlight">\(z(1,t)\)</span> parameterizes <span class="math notranslate nohighlight">\(\Gamma_1\)</span>.</p>
+</div>
+</div>
+<p>For ease of presentation we assume that <span class="math notranslate nohighlight">\(f'\)</span> is continuous, and <span class="math notranslate nohighlight">\(z(s,t)\)</span> is <span class="math notranslate nohighlight">\(C^2\)</span>. Define</p>
+<div class="math notranslate nohighlight">
+\[I(s) = \int_{\Gamma_s} f(z)\,dz = \int_0^1 f(z(s,t)) \frac{\partial z(s,t)}{\partial t}\,dt.\]</div>
+<p>We differentiate <span class="math notranslate nohighlight">\(I\)</span> with respect to <span class="math notranslate nohighlight">\(s\)</span> using Leibniz rule, justified by the fact that the integrand
+is <span class="math notranslate nohighlight">\(C^1\)</span> as a function of <span class="math notranslate nohighlight">\(s\)</span>. We have, by chain rule,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dI(s)}{ds} = \int_0^1 f'(z(s,t)) \frac{\partial z}{\partial s} \frac{\partial z}{\partial t} + f(z(s,t)) \frac{\partial^2 z}{\partial s \partial t}\,dt.\]</div>
+<p>Notice that because <span class="math notranslate nohighlight">\(z\)</span> is <span class="math notranslate nohighlight">\(C^2\)</span> the integrand above is also the same expression as if we differentiated with respect to t. Thus</p>
+<div class="math notranslate nohighlight">
+\[\frac{dI(s)}{ds} = \int_0^1 \frac{\partial}{\partial t} f(z(s,t))\frac{\partial z}{\partial s}\,dt.\]</div>
+<p>Now invoke the fundamental theorem of calculus, and note that the resulting expression vanishes because <span class="math notranslate nohighlight">\(z(s,1) = z(s,0)\)</span>. In particular <span class="math notranslate nohighlight">\(I\)</span> is constant,
+and so <span class="math notranslate nohighlight">\(I(0) = I(1)\)</span> as required <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+<p>If a domain <span class="math notranslate nohighlight">\(D\)</span> is such that every loop integral can be continuously deformed to a point, then all loop integrals of <span class="math notranslate nohighlight">\(f\)</span> vanish. This we know now is equivalent to the
+existance of an an antiderivative for <span class="math notranslate nohighlight">\(f\)</span> and path independence of its contour integrals. Such a domain <span class="math notranslate nohighlight">\(D\)</span> is
+called simply connected if this is true, and is usually the case when <span class="math notranslate nohighlight">\(D\)</span> has no holes.
+The loop integrals vanishing is the content of Cauchy’s integral theorem, but keep in mind the other two conditions as well.</p>
+<div class="admonition-cauchy-s-integral-theorem admonition">
+<p class="admonition-title">Cauchy’s Integral Theorem</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is analytic in a simply connected domain <span class="math notranslate nohighlight">\(D\)</span> and <span class="math notranslate nohighlight">\(\Gamma\)</span> is a loop then <span class="math notranslate nohighlight">\(\int_{\Gamma}f = 0\)</span>.</p>
+</div>
+<p>What can we say if <span class="math notranslate nohighlight">\(f\)</span> is analytic on a simply connected domain <span class="math notranslate nohighlight">\(D\)</span>, but has a singularity? For example <span class="math notranslate nohighlight">\(\frac{1}{z}\)</span> on the unit disk <span class="math notranslate nohighlight">\(|z|&lt;1\)</span>.
+In this case the above does not apply. For instance many texts establish early on that when <span class="math notranslate nohighlight">\(C\)</span> is a circle centred at <span class="math notranslate nohighlight">\(a\)</span> of some radius we have
+<span class="math notranslate nohighlight">\(\int_C \frac{dz}{z-a}\)</span> is <span class="math notranslate nohighlight">\(2 \pi i\)</span> when <span class="math notranslate nohighlight">\(a\)</span> lies inside <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(0\)</span> otherwise.</p>
+<p>In this case, we appeal to Cauchy’s integral formula.</p>
+<div class="admonition-theorem admonition">
+<p class="admonition-title">Theorem</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be analytic in a simply connected domain <span class="math notranslate nohighlight">\(D\)</span> containing a simple, closed, positively oriented contour <span class="math notranslate nohighlight">\(\Gamma\)</span>.
+If <span class="math notranslate nohighlight">\(a\)</span> is any point inside <span class="math notranslate nohighlight">\(\Gamma\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[f(a) = \frac{1}{2\pi i} \int_{\Gamma} \frac{f(z)}{z-a}\,dz.\]</div>
+</div>
 </div>
 
 

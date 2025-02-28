@@ -80,3 +80,70 @@ Finally we have
    \int_0^1 f(z+wt)\,dt - f(z) = \int_0^1 f(z+wt)-f(z)\,dt
 
 which tends to :math:`0` as :math:`w \to 0` by continuity of :math:`f` :math:`\blacksquare`.
+
+
+How do we check if all loop integrals vanish? One tool we can use is the deformation invariance theorem.
+
+.. admonition:: Theorem (Deformation Invariance)
+
+	Let :math:`f` be analytic in a domain D. If :math:`\Gamma_0, \Gamma_1 \subset D` are two loops such that
+	:math:`\Gamma_0` can be continuously deformed into :math:`\Gamma_1` then 
+
+	.. math::
+		\int_{\Gamma_0} f(z)\,dz = \int_{\Gamma_1}f(z)\,dz.
+
+	.. hint::
+		By continuously deformed, we mean that there is a continuous function :math:`z(s,t):[0,1] \times [0,1]` such that
+		:math:`z(0,t)` parameterizes :math:`\Gamma_0` and :math:`z(1,t)` parameterizes :math:`\Gamma_1`.
+
+For ease of presentation we assume that :math:`f'` is continuous, and :math:`z(s,t)` is :math:`C^2`. Define 
+
+.. math::
+
+	I(s) = \int_{\Gamma_s} f(z)\,dz = \int_0^1 f(z(s,t)) \frac{\partial z(s,t)}{\partial t}\,dt.
+
+We differentiate :math:`I` with respect to :math:`s` using Leibniz rule, justified by the fact that the integrand
+is :math:`C^1` as a function of :math:`s`. We have, by chain rule,
+
+.. math::
+	
+	\frac{dI(s)}{ds} = \int_0^1 f'(z(s,t)) \frac{\partial z}{\partial s} \frac{\partial z}{\partial t} + f(z(s,t)) \frac{\partial^2 z}{\partial s \partial t}\,dt.
+
+Notice that because :math:`z` is :math:`C^2` the integrand above is also the same expression as if we differentiated with respect to t. Thus
+
+.. math::
+
+	\frac{dI(s)}{ds} = \int_0^1 \frac{\partial}{\partial t} f(z(s,t))\frac{\partial z}{\partial s}\,dt.
+
+Now invoke the fundamental theorem of calculus, and note that the resulting expression vanishes because :math:`z(s,1) = z(s,0)`. In particular :math:`I` is constant,
+and so :math:`I(0) = I(1)` as required :math:`\blacksquare`.
+
+
+If a domain :math:`D` is such that every loop integral can be continuously deformed to a point, then all loop integrals of :math:`f` vanish. This we know now is equivalent to the
+existance of an an antiderivative for :math:`f` and path independence of its contour integrals. Such a domain :math:`D` is 
+called simply connected if this is true, and is usually the case when :math:`D` has no holes.
+The loop integrals vanishing is the content of Cauchy's integral theorem, but keep in mind the other two conditions as well.
+
+.. admonition:: Cauchy's Integral Theorem
+
+
+	If :math:`f` is analytic in a simply connected domain :math:`D` and :math:`\Gamma` is a loop then :math:`\int_{\Gamma}f = 0`.
+
+
+What can we say if :math:`f` is analytic on a simply connected domain :math:`D`, but has a singularity? For example :math:`\frac{1}{z}` on the unit disk :math:`|z|<1`.
+In this case the above does not apply. For instance many texts establish early on that when :math:`C` is a circle centred at :math:`a` of some radius we have
+:math:`\int_C \frac{dz}{z-a}` is :math:`2 \pi i` when :math:`a` lies inside :math:`C` and :math:`0` otherwise.
+
+
+In this case, we appeal to Cauchy's integral formula.
+
+.. admonition:: Theorem
+
+	Let :math:`f` be analytic in a simply connected domain :math:`D` containing a simple, closed, positively oriented contour :math:`\Gamma`.
+	If :math:`a` is any point inside :math:`\Gamma` then
+
+	.. math::
+
+		f(a) = \frac{1}{2\pi i} \int_{\Gamma} \frac{f(z)}{z-a}\,dz.
+
+	
