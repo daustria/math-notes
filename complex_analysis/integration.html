@@ -16,7 +16,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="A Discontinuous Integral" href="../analytic_nt/discontinuous_integral.html" />
+    <link rel="next" title="Integration and Differentiability" href="integration_power_series.html" />
     <link rel="prev" title="Taylor’s Theorem with Remainder" href="../real_analysis/taylors_theorem_remainder.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -47,6 +47,7 @@
 <p class="caption"><span class="caption-text">Complex Analysis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contour Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration_power_series.html">Integration and Differentiability</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Analytic Number Theory</span></p>
 <ul>
@@ -58,7 +59,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="../real_analysis/taylors_theorem_remainder.html" title="previous chapter">Taylor’s Theorem with Remainder</a></li>
-      <li>Next: <a href="../analytic_nt/discontinuous_integral.html" title="next chapter">A Discontinuous Integral</a></li>
+      <li>Next: <a href="integration_power_series.html" title="next chapter">Integration and Differentiability</a></li>
   </ul></li>
 </ul>
 </div>
@@ -90,8 +91,7 @@
             
   <div class="section" id="contour-integration">
 <h1>Contour Integration<a class="headerlink" href="#contour-integration" title="Permalink to this headline">¶</a></h1>
-<p>We will have a quick, simple discussion on contour integrals and how they throw light on the behaviour of holomorphic functions.
-Not intended to be a complete discussion, reader is expected to have acquaintance with contour integration already.</p>
+<p>A quick discussion on contour integrals and their light on holomorphic functions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A domain <span class="math notranslate nohighlight">\(D\)</span> will refer to an open connected subset of the complex plane. Functions will usually have the form
@@ -180,12 +180,21 @@ has a singularity inside the contour, like <span class="math notranslate nohighl
 Also, many texts establish early on that when <span class="math notranslate nohighlight">\(C\)</span> is a circle centred at <span class="math notranslate nohighlight">\(a\)</span> of some radius we have
 <span class="math notranslate nohighlight">\(\int_C \frac{dz}{z-a}\)</span> is <span class="math notranslate nohighlight">\(2 \pi i\)</span> when <span class="math notranslate nohighlight">\(a\)</span> lies inside <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(0\)</span> otherwise.</p>
 <p>In this case, we will want to appeal to Cauchy’s integral formula.</p>
-<div class="admonition-theorem admonition">
+<div class="admonition-theorem admonition" id="cauchy-integral-formula">
 <p class="admonition-title">Theorem</p>
 <p>Let <span class="math notranslate nohighlight">\(f\)</span> be analytic in a simply connected domain <span class="math notranslate nohighlight">\(D\)</span> containing a simple, closed, positively oriented contour <span class="math notranslate nohighlight">\(\Gamma\)</span>.
 If <span class="math notranslate nohighlight">\(a\)</span> is any point inside <span class="math notranslate nohighlight">\(\Gamma\)</span> then</p>
 <div class="math notranslate nohighlight">
 \[f(a) = \frac{1}{2\pi i} \int_{\Gamma} \frac{f(z)}{z-a}\,dz.\]</div>
+</div>
+<p>This result generalizes further to higher derivatives.</p>
+<div class="admonition-theorem admonition" id="cauchy-integral-formula-general">
+<p class="admonition-title">Theorem</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be analytic in a simply connected domain <span class="math notranslate nohighlight">\(D\)</span> containing a simple, closed, positively oriented contour <span class="math notranslate nohighlight">\(\Gamma\)</span>.
+If <span class="math notranslate nohighlight">\(a\)</span> is any point inside <span class="math notranslate nohighlight">\(\Gamma\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[f^{(n)}(z) = \frac{n!}{2 \pi i}\int_{\Gamma} \frac{f(s)}{(s-z)^{n+1}}ds\]</div>
+<p>for each <span class="math notranslate nohighlight">\(n \geq 1\)</span>.</p>
 </div>
 </div>
 
