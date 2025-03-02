@@ -1,8 +1,7 @@
 Contour Integration
 ====================
 
-We will have a quick, simple discussion on contour integrals and how they throw light on the behaviour of holomorphic functions.
-Not intended to be a complete discussion, reader is expected to have acquaintance with contour integration already.
+A quick discussion on contour integrals and their light on holomorphic functions. 
 
 .. note:: A domain :math:`D` will refer to an open connected subset of the complex plane. Functions will usually have the form
    :math:`f: D \to \mathbb{C}` for some domain D.
@@ -138,6 +137,7 @@ Also, many texts establish early on that when :math:`C` is a circle centred at :
 
 In this case, we will want to appeal to Cauchy's integral formula.
 
+.. _cauchy-integral-formula:
 .. admonition:: Theorem
 
 	Let :math:`f` be analytic in a simply connected domain :math:`D` containing a simple, closed, positively oriented contour :math:`\Gamma`.
@@ -147,4 +147,18 @@ In this case, we will want to appeal to Cauchy's integral formula.
 
 		f(a) = \frac{1}{2\pi i} \int_{\Gamma} \frac{f(z)}{z-a}\,dz.
 
-	
+
+This result generalizes further to higher derivatives.
+
+.. _cauchy-integral-formula-general:
+
+.. admonition:: Theorem
+
+	Let :math:`f` be analytic in a simply connected domain :math:`D` containing a simple, closed, positively oriented contour :math:`\Gamma`.
+	If :math:`a` is any point inside :math:`\Gamma` then 
+
+	.. math::
+		f^{(n)}(z) = \frac{n!}{2 \pi i}\int_{\Gamma} \frac{f(s)}{(s-z)^{n+1}}ds 
+
+	for each :math:`n \geq 1`.
+
