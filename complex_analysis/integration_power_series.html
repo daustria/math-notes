@@ -95,29 +95,29 @@
 <p class="admonition-title">Warning</p>
 <p>still largely a work in progress</p>
 </div>
-<p>A key result about the theory of holomorphic or complex-differentiable functions, is that they are expressible as power series.</p>
+<p>Holomorphic or complex-differentiable functions are expressible as their Taylor series.</p>
 <div class="admonition-theorem admonition">
 <p class="admonition-title">Theorem</p>
-<p>Let <span class="math notranslate nohighlight">\(f\)</span> be analytic in a disk <span class="math notranslate nohighlight">\(|z-a|&lt;R\)</span> centred at <span class="math notranslate nohighlight">\(a\)</span>. Then the Taylor series for <span class="math notranslate nohighlight">\(f\)</span>
-converges pointwise on this disk to <span class="math notranslate nohighlight">\(f\)</span>. Furthermore, the convergence is uniform on any properly contained subdisk.</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be analytic in a disk <span class="math notranslate nohighlight">\(|z-a|&lt;R\)</span> centred at <span class="math notranslate nohighlight">\(a\)</span>. Then the Taylor series <span class="math notranslate nohighlight">\(T_a(z)\)</span> for <span class="math notranslate nohighlight">\(f\)</span> centred at <span class="math notranslate nohighlight">\(a\)</span>
+converges pointwise on this disk to <span class="math notranslate nohighlight">\(f\)</span>. Namely, for each <span class="math notranslate nohighlight">\(z\)</span> in this disk we have</p>
+<div class="math notranslate nohighlight">
+\[T_a(z) := \sum_{n \geq 0} \frac{f^{(n)}(a)}{n!} (z-a)^n = f(z).\]</div>
 </div>
 <p>We will start from the Taylor series <span class="math notranslate nohighlight">\(T_a(z)\)</span> and show it is equal to <span class="math notranslate nohighlight">\(f(z)\)</span>. We will integrate over a circle centred
-at <span class="math notranslate nohighlight">\(a\)</span>, properly containing <span class="math notranslate nohighlight">\(z\)</span>.</p>
+at <span class="math notranslate nohighlight">\(a\)</span>, properly containing <span class="math notranslate nohighlight">\(z\)</span>. By <a class="reference internal" href="integration.html#cauchy-integral-formula-general"><span class="std std-ref">Cauchy’s integral formula</span></a>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-T_a(z) &amp;= \sum_{n \geq 0} a_n(z-a)^n \\
-&amp;= \sum_{n \geq 0} \frac{f^{(n)}(a)}{n!} (z-a)^n \\
+T_a(z) &amp;=  \sum_{n \geq 0} \frac{f^{(n)}(a)}{n!} (z-a)^n \\
 &amp;= \sum_{n \geq 0} \frac{1}{2 \pi i} \oint \frac{f(s)}{(s-a)^{n+1}} (z-a)^n ds \\
-&amp;= \sum_{n \geq 0} \frac{1}{2 \pi i} \oint \frac{f(s)}{s-a} \bigg(\frac{z-a}{s-a}\bigg)^n ds.
+&amp;= \frac{1}{2 \pi i} \sum_{n \geq 0} \oint \frac{f(s)}{s-a} \bigg(\frac{z-a}{s-a}\bigg)^n ds.
 \end{align}\end{split}\]</div>
-<p>where we invoke the generalized version of <a class="reference internal" href="integration.html#cauchy-integral-formula-general"><span class="std std-ref">Cauchy’s integral formula</span></a>.
-Notice that the series obtained from interchanging summation and integration is a geometric series, which converges uniformly
-on the closure of this disk (note that <span class="math notranslate nohighlight">\(|z-a|/|s-a| &lt; 1\)</span>). This justifies the interchange of operations. Continuing, we have</p>
+<p>Notice that the series obtained from interchanging summation and integration is a geometric series, which converges uniformly
+on the circle (<span class="math notranslate nohighlight">\(|z-a|/|s-a| &lt; 1\)</span> for <span class="math notranslate nohighlight">\(s\)</span> in the circle). This justifies the interchange of operations. Continuing, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-\frac{1}{2\ pi i} \oint \sum_{n \geq 0} \frac{f(s)}{s-a} \bigg(\frac{z-a}{s-a}\bigg)^n ds &amp;= \frac{1}{2 \pi i} \oint \frac{f(s)}{s-a} \frac{1}{1 - \frac{z-a}{s-a}}ds  \\
+\frac{1}{2 \pi i} \oint \sum_{n \geq 0} \frac{f(s)}{s-a} \bigg(\frac{z-a}{s-a}\bigg)^n ds &amp;= \frac{1}{2 \pi i} \oint \frac{f(s)}{s-a} \frac{1}{1 - \frac{z-a}{s-a}}ds  \\
 &amp;= \frac{1}{2 \pi i} \oint \frac{f(s)}{s-z}\,dz \\
-&amp;= f(z).
+&amp;= f(z)
 \end{align}\end{split}\]</div>
 <p>as required <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
 </div>
