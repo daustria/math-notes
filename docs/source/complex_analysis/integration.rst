@@ -56,7 +56,7 @@ exactly what we want since
 
 Fix a point :math:`x` in :math:`D` and define :math:`F(z) = \int_x^z f(s)\,ds` where the notation indicates
 integrating over a straight line from :math:`x` to :math:`z`. We must show that :math:`F` is differentiable and its derivative is :math:`f`, which can
-be done directly. Notice that :math:`x \to z+w \to z \to x` is a loop integral. So by our hypothesis we have
+be done directly. By path independence, we have
 
 .. math::
 
@@ -186,7 +186,7 @@ out to be correct.
 	If :math:`a` is any point inside :math:`\Gamma` then 
 
 	.. math::
-		f^{(n)}(z) = \frac{n!}{2 \pi i}\int_{\Gamma} \frac{f(s)}{(s-a)^{n+1}}ds 
+		f^{(n)}(a) = \frac{n!}{2 \pi i}\int_{\Gamma} \frac{f(s)}{(s-a)^{n+1}}ds 
 
 	for each :math:`n \geq 1`.
 
