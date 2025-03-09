@@ -129,7 +129,7 @@ exactly what we want since</p>
 <p><span class="math notranslate nohighlight">\(3 \implies 1\)</span></p>
 <p>Fix a point <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(D\)</span> and define <span class="math notranslate nohighlight">\(F(z) = \int_x^z f(s)\,ds\)</span> where the notation indicates
 integrating over a straight line from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(z\)</span>. We must show that <span class="math notranslate nohighlight">\(F\)</span> is differentiable and its derivative is <span class="math notranslate nohighlight">\(f\)</span>, which can
-be done directly. Notice that <span class="math notranslate nohighlight">\(x \to z+w \to z \to x\)</span> is a loop integral. So by our hypothesis we have</p>
+be done directly. By path independence, we have</p>
 <div class="math notranslate nohighlight">
 \[F(z+w) - F(z) = \int_x^{z+w} f - \int_x^z f  = \int_{z}^{z+w} f\]</div>
 <p>So the proof is done if we can show</p>
@@ -208,7 +208,7 @@ out to be correct.</p>
 <p>Let <span class="math notranslate nohighlight">\(f\)</span> be analytic in a simply connected domain <span class="math notranslate nohighlight">\(D\)</span> containing a simple, closed, positively oriented contour <span class="math notranslate nohighlight">\(\Gamma\)</span>.
 If <span class="math notranslate nohighlight">\(a\)</span> is any point inside <span class="math notranslate nohighlight">\(\Gamma\)</span> then</p>
 <div class="math notranslate nohighlight">
-\[f^{(n)}(z) = \frac{n!}{2 \pi i}\int_{\Gamma} \frac{f(s)}{(s-a)^{n+1}}ds\]</div>
+\[f^{(n)}(a) = \frac{n!}{2 \pi i}\int_{\Gamma} \frac{f(s)}{(s-a)^{n+1}}ds\]</div>
 <p>for each <span class="math notranslate nohighlight">\(n \geq 1\)</span>.</p>
 </div>
 <p>We will prove a more general result. Notice in the statement that <span class="math notranslate nohighlight">\(g\)</span> is just continuous
