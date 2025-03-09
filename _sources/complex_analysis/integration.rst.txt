@@ -9,6 +9,8 @@ A quick discussion on contour integrals and their light on holomorphic functions
 Our first theorem will connect the presence of an antiderivative with path independence and vanishing loop integrals.
 In fact these are equivalent in some sense.
 
+.. _antiderivative-path-ind-loop-vanish:
+
 .. admonition:: Theorem
 
    Let :math:`f`  be continuous in a domain D. The following are equivalent:
@@ -135,10 +137,10 @@ Also, many texts establish early on that when :math:`C` is a circle centred at :
 :math:`\int_C \frac{dz}{z-a}` is :math:`2 \pi i` when :math:`a` lies inside :math:`C` and :math:`0` otherwise.
 
 
-In this case, we will want to appeal to Cauchy's integral formula.
+We can handle such cases with Cauchy's integral formula. 
 
 .. _cauchy-integral-formula:
-.. admonition:: Theorem
+.. admonition:: Cauchy's integral formula.
 
 	Let :math:`f` be analytic in a simply connected domain :math:`D` containing a simple, closed, positively oriented contour :math:`\Gamma`.
 	If :math:`a` is any point inside :math:`\Gamma` then
@@ -148,17 +150,95 @@ In this case, we will want to appeal to Cauchy's integral formula.
 		f(a) = \frac{1}{2\pi i} \int_{\Gamma} \frac{f(z)}{z-a}\,dz.
 
 
-This result generalizes further to higher derivatives.
+Using the deformation invariance theorem, we may shrink the contour :math:`\Gamma` to a positively oriented circle :math:`C_r` centred at :math:`a` with 
+a radius :math:`r` small enoguh so that the circle stays inside :math:`D`. We rewrite the integral on the right hand side to be 
+
+.. math::
+
+	\oint \frac{f(z)}{z-a}\,dz = \oint \frac{f(a)}{z-a}\,dz + \oint \frac{f(z) - f(a)}{z-a}\,dz.
+
+The first integral is known to be :math:`2 \pi i f(a)`, so the proof is done if we can show that the second integral approaches :math:`0` as 
+:math:`r \to 0`. By analyticity, we have that
+
+.. math::
+
+	\frac{f(z) - f(a)}{z-a} = f'(a) + \phi(z)
+
+where :math:`\phi(z)` is a continuous function satisfying :math:`\phi(a) = 0`. Choose :math:`r` so small so that
+:math:`|\phi(z)| < 1` for each :math:`z` inside and on :math:`C_r`. Then we have
+
+.. math::
+
+	\bigg| \oint \frac{f(z)-f(a)}{z-a}\,dz \bigg| \leq 2 \pi r (|f'(a)| + 1).
+
+
+which tends to :math:`0` as :math:`r` does, completing the proof :math:`\blacksquare`.
+
+Note that this theorem is also true if our contour is a loop with self intersections. Just separate the contour into multiple loops with winding number one.
+Also this result generalizes further to higher derivatives. The formula formally obtained from differentiating under the integral sign turns
+out to be correct.
 
 .. _cauchy-integral-formula-general:
 
-.. admonition:: Theorem
+.. admonition:: Cauchy's Integral Formula
 
 	Let :math:`f` be analytic in a simply connected domain :math:`D` containing a simple, closed, positively oriented contour :math:`\Gamma`.
 	If :math:`a` is any point inside :math:`\Gamma` then 
 
 	.. math::
-		f^{(n)}(z) = \frac{n!}{2 \pi i}\int_{\Gamma} \frac{f(s)}{(s-z)^{n+1}}ds 
+		f^{(n)}(z) = \frac{n!}{2 \pi i}\int_{\Gamma} \frac{f(s)}{(s-a)^{n+1}}ds 
 
 	for each :math:`n \geq 1`.
 
+We will prove a more general result. Notice in the statement that :math:`g` is just continuous
+and our contour :math:`\Gamma` is just a contour, not necessarily closed or positively oriented.
+
+.. admonition:: Lemma
+
+	Let :math:`g` be continuous on some contour :math:`\Gamma`. For :math:`a` not on :math:`\Gamma` define
+
+	.. math:: 
+	
+		G(z) := \int_{\Gamma} \frac{g(z)}{z-a}\,dz
+
+	Then :math:`G(z)` is analytic at each point not on :math:`\Gamma`. Its derivative is given by 
+
+	.. math::
+
+		G'(z) = \int_{\Gamma} \frac{g(z)}{(z-a)^2}\,dz.
+
+
+Define :math:`J = J(z)` to be the quantity
+
+.. math::
+	J(z) = \frac{G(z) - G(a)}{z-a} - \int_{\Gamma} \frac{g(\zeta)}{(\zeta - a)^2}\,d\zeta.
+
+The proof is done if we can show that :math:`J \to 0` as :math:`z \to a`. Using some algebra we have
+
+.. math::
+
+	\begin{align}
+		J(z) &= \int_{\Gamma} \frac{g(\zeta)}{(\zeta - z)(\zeta - a)}\,d\zeta - \int_{\Gamma} \frac{g(\zeta)}{(\zeta - a)^2}\,d\zeta \\
+		&= (z-a) \int_{\Gamma} \frac{g(\zeta)}{(\zeta - z)(\zeta - a)^2}\,d\zeta
+	\end{align}
+
+where we assume that :math:`z` is in a small enough neighbourhood of :math:`a` so that :math:`z` does not lie on :math:`\Gamma`. The integrand is continuous
+on the image of :math:`\Gamma` which is a compact set. Hence it achieves its maximum value there, call it :math:`M`. This lets us bound :math:`|J(z)|` by
+:math:`|z-a| M \ell(\Gamma)` which tends to :math:`0` as :math:`z \to a`. :math:`\blacksquare`. 
+
+
+The technique applied here can be generalized, to prove the validity
+of computing :math:`G^{(n+1)}(z)` from :math:`G^{(n)}(z)` by differentiating under the integral sign, but we will not show those details here. 
+
+
+This result is enough to prove the general version of Cauchy's integral formula. Just choose :math:`\Gamma` to be a circle centred at :math:`a` of small enough radius so that
+:math:`f` is analytic inside and on the circle. This also proves that if :math:`f` is analytic on :math:`D`, then so is :math:`f^{(n)}` for each :math:`n \geq 1` :math:`\blacksquare`.
+
+Thus :math:`f` being differentiable once implies differentiability of all orders. So if :math:`f` has an antiderivative then :math:`f` itself is analytic. Recall from the :ref:`first theorem <antiderivative-path-ind-loop-vanish>` that the existance of an antiderivative is equivalent to two other conditions relating to contour integrals of :math:`f`. This is basically the content of Morera's Theorem which we now state.
+
+.. admonition:: Morera's Theorem
+
+	Let :math:`f` be continuous in a domain :math:`D`. Suppose that all loop integrals vanish. Then :math:`f` is analytic on :math:`D`.
+
+
+Note we also could have also used path independence of contour integrals of :math:`f` :math:`\blacksquare`.
