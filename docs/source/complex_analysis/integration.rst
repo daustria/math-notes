@@ -164,7 +164,7 @@ The first integral is known to be :math:`2 \pi i f(a)`, so the proof is done if 
 
 	\frac{f(z) - f(a)}{z-a} = f'(a) + \phi(z)
 
-where :math:`\phi(z)` is a continuous function satisfying :math:`\phi(a) = 0`. Choose :math:`r` so small so that
+where :math:`\phi(z)` is a function satisfying :math:`\lim_{z \to a} \phi(z) = \phi(a) = 0`. Choose :math:`r` so small so that
 :math:`|\phi(z)| < 1` for each :math:`z` inside and on :math:`C_r`. Then we have
 
 .. math::
