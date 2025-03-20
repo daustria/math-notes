@@ -151,7 +151,7 @@ We can handle such cases with Cauchy's integral formula.
 
 
 Using the deformation invariance theorem, we may shrink the contour :math:`\Gamma` to a positively oriented circle :math:`C_r` centred at :math:`a` with 
-a radius :math:`r` small enoguh so that the circle stays inside :math:`D`. We rewrite the integral on the right hand side to be 
+a radius :math:`r` small enough so that the circle stays inside :math:`D`. We rewrite the integral on the right hand side to be 
 
 .. math::
 

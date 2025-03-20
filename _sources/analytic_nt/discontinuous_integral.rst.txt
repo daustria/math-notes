@@ -6,11 +6,12 @@ Let :math:`f:\mathbb{C} \to \mathbb{C}`. For :math:`c > 0`, we abbreviate the in
 .. math:: 
 	\int_{c - i\infty}^{c + i\infty} f(s)\,ds = \int_{(c)} f(s)\,ds
 
-and interpret it in the 'principal value' sense.
+and interpret it in the 'principal value' sense. That is, look at 
+:math:`\lim_{R \to \infty} \int_{c - iR}^{c+iR}` 
 
 .. admonition:: Theorem
 
-	Suppose we have a discontinuous function
+	Define :math:`\delta(x)` to be the discontinous function 
 
 	.. math::
 
@@ -82,10 +83,11 @@ be found in a few classical texts (like the one by Davenport I think). The advan
 	We have, for :math:`x,c,R>0`,
 
 	.. math::
+
 		|I(x,R) - \delta(x)| < 
 		\begin{cases}
-		x^c \min (1, \frac{1}{R | \log x |}) & x \neq 1\\
-		c/R & x = 1
+			x^c \min (1, \frac{1}{R | \log x |}) & x \neq 1\\
+			c/R & x = 1
 		\end{cases}
 
 This discontinuous integral can be used to extract coefficients from a Dirichlet series in the following sense. It will be a key result in proving the Prime Number Theorem.
@@ -106,15 +108,26 @@ This discontinuous integral can be used to extract coefficients from a Dirichlet
 	We often write :math:`s = \sigma + it`, denoting :math:`\sigma,t` as the real and imginary parts of :math:`s`.
 
 The assumptions are enough to show that :math:`f(s)` converges uniformly on the half plane :math:`\sigma > c - \epsilon`, which
-justifies term by term integration.
+justifies term by term integration in the following,
 
 .. math::
 
 	\begin{align}
-	\frac{1}{2 \pi i} \int_{(c)} f(s) \frac{x^s}{s}\,ds &= \frac{1}{2 \pi i} \int_{(c)} \sum _{n \geq 1} \frac{a_n}{n^s} \frac{x^s }{s} ds \\
-	&= \frac{1}{2 \pi i} \sum_{n \geq 1} a_n \int_{(c)} \frac{(x/n)^s}{s}\,ds \\
-	&= \sum_{n \geq 1} a_n \delta(x/n) \\
+	\frac{1}{2 \pi i} \int_{c-iR}^{c+iR} f(s) \frac{x^s}{s}\,ds &= \frac{1}{2 \pi i} \int_{c-iR}^{c+iR} \sum_{n \geq 1} \frac{a_n}{n^s} \frac{x^s}{s} ds \\
+	&= \frac{1}{2 \pi i} \sum_{n \geq 1} \frac{a_n}{n^s} \int_{c-iR}^{c+iR} \frac{x^s}{s}\,ds \\
+	&= \sum_{n \geq 1} \frac{a_n}{n^s} I(x, R)
+	\end{align}
+
+where we use notation as in the previous theorem. Viewing the summands as a function of :math:`R`, notice that the summation converges uniformly 
+on :math:`R \geq 0` (can use the previous theorem to bound :math:`I(x,R)` by :math:`x^c`) so that we may take the limit as :math:`R \to \infty` and move the limit inside the sum
+(this can be justified in a few ways, one being the dominated convergence theorem, viewing :math:`R` as taking values in a sequence :math:`1,2,\ldots`). We then have
+
+.. math::
+
+	\begin{align}
+	\sum_{n \geq 1} \frac{a_n}{n^s} \delta(x) &= \sum_{n \geq 1} a_n \delta(x/n) \\
 	&= \sum_{n < x} a_n
 	\end{align}
 
 as required :math:`\blacksquare`.
+
