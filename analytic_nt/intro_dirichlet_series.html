@@ -100,13 +100,35 @@
 They are additive if <span class="math notranslate nohighlight">\(f(m+n)=f(m)+f(n)\)</span> for coprime <span class="math notranslate nohighlight">\(m,n\)</span> and
 completely additive if the rule holds for all <span class="math notranslate nohighlight">\(m,n\)</span>. Same rule for
 multiplicative but for the product <span class="math notranslate nohighlight">\(mn\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\nu(n)\)</span> is the distinct number of prime divisors.
-<span class="math notranslate nohighlight">\(\Omega(n)\)</span> is the number of prime divisors not necessarily distinct.</p>
-<p><span class="math notranslate nohighlight">\(d(n) = \sum_{d|n} n\)</span> is the divisor function.
-can be shown that <span class="math notranslate nohighlight">\(d(n) = O(n^{\epsilon})\)</span> for any <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span>.
-Showing <span class="math notranslate nohighlight">\(d(n) = O(\sqrt{n})\)</span> is easier, just notice that for any pair of divisors
-of <span class="math notranslate nohighlight">\(n\)</span>, one of the partners is at most <span class="math notranslate nohighlight">\(\sqrt{n}\)</span>.</p>
-<p>Mobius function <span class="math notranslate nohighlight">\(\mu(n)\)</span> has the rule <span class="math notranslate nohighlight">\(\mu(1)=1\)</span> and</p>
+<p><span class="math notranslate nohighlight">\(\nu(n)\)</span> is the distinct number of prime divisors. This is completely multiplicative.</p>
+<p><span class="math notranslate nohighlight">\(\Omega(n)\)</span> is the number of prime divisors not necessarily distinct. Also multiplicative.</p>
+<p><span class="math notranslate nohighlight">\(d(n) = \sum_{d|n} n\)</span> is the divisor function. This is multiplicative, since
+any divisor of <span class="math notranslate nohighlight">\(mn\)</span> can be split into two relatively prime parts that are divisors for
+<span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> alone. An interesting approximation is this that,</p>
+<div class="admonition-proposition admonition">
+<p class="admonition-title">Proposition</p>
+<p>for any <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span> we have <span class="math notranslate nohighlight">\(d(n) = O(n^{\epsilon})\)</span>.</p>
+</div>
+<p>This result can be improved, but we don’t want to go too far.</p>
+<p>The case that <span class="math notranslate nohighlight">\(d(n) = O(\sqrt{n})\)</span> is pretty easy, just notice that for any
+pair whose product is <span class="math notranslate nohighlight">\(n\)</span>, one of the partners is at most <span class="math notranslate nohighlight">\(\sqrt{n}\)</span>.</p>
+<p>To tackle the general case we can ‘localize’ the problem to the prime divisors of <span class="math notranslate nohighlight">\(n = p_1^{a_1}\ldots p_k^{a_k}\)</span>.
+We fix an <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span> and a prime <span class="math notranslate nohighlight">\(p=p_j\)</span> dividing <span class="math notranslate nohighlight">\(n\)</span> with power <span class="math notranslate nohighlight">\(a=a_j\)</span>. We will find a
+constant <span class="math notranslate nohighlight">\(C&gt;0\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\frac{d(p)}{p^{a \epsilon}} = \frac{a+1}{p^{a \epsilon}} \leq C\]</div>
+<p>where the constant <span class="math notranslate nohighlight">\(C\)</span> depends only on <span class="math notranslate nohighlight">\(\epsilon\)</span>. It suffices to do this since <span class="math notranslate nohighlight">\(d\)</span> is multiplicative,
+we can later take the product of all such <span class="math notranslate nohighlight">\(C\)</span> to bound <span class="math notranslate nohighlight">\(d(n)/n^{\epsilon}\)</span>.</p>
+<p>We split our work into cases. If <span class="math notranslate nohighlight">\(p &gt; e^{1/\epsilon}\)</span> then <span class="math notranslate nohighlight">\(p^{\epsilon} &gt; e\)</span>, so</p>
+<div class="math notranslate nohighlight">
+\[\frac{a+1}{p^{a \epsilon}} \leq \bigg( \frac{e}{p^\epsilon} \bigg)^a  \leq 1\]</div>
+<p>where we used that <span class="math notranslate nohighlight">\(e^a \geq a+1\)</span> using the Taylor series expansion of <span class="math notranslate nohighlight">\(e^x\)</span>. For all the other,
+smaller primes, we have</p>
+<div class="math notranslate nohighlight">
+\[\frac{a+1}{p^{a \epsilon}} \leq \frac{a+1}{2^{a \epsilon}} \to 0\]</div>
+<p>as <span class="math notranslate nohighlight">\(a \to \infty\)</span>. Thus we may find a positive constant that bounds this expression uniformly for all <span class="math notranslate nohighlight">\(a \geq 0\)</span>. We set our
+constant <span class="math notranslate nohighlight">\(C\)</span> to be the maximum of this number and 1 <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\mu(n)\)</span> is the Mobius function. It has <span class="math notranslate nohighlight">\(\mu(1)=1\)</span> and</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\mu(n) = \begin{cases}
         (-1)^{\nu(n)} &amp; \text{n squarefree} \\
@@ -114,12 +136,16 @@ of <span class="math notranslate nohighlight">\(n\)</span>, one of the partners 
 \end{cases}\end{split}\]</div>
 <p>It can be shown rather easily that <span class="math notranslate nohighlight">\(\sum_{d|n} \mu(d) = 0\)</span> with the exception that
 <span class="math notranslate nohighlight">\(\mu(1)=1\)</span>. This can be applied to show the Mobius inversion formula,</p>
+<div class="admonition-theorem admonition">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="math notranslate nohighlight">\(f,g\)</span> are arithmetic functions then</p>
 <div class="math notranslate nohighlight">
 \[f(n) = \sum_{d|n} g(n) \quad \forall n  \iff g(n) = \sum_{d|n}\mu(d)f(n/d) \quad \forall n.\]</div>
+</div>
 <p>Euler phi <span class="math notranslate nohighlight">\(\phi(n)\)</span> is defined by</p>
 <div class="math notranslate nohighlight">
 \[\phi(n) = n \prod_{p|n}\bigg( 1 - \frac{1}{p} \bigg) = |\mathbb{Z}_n^*|\]</div>
-<p>where the product is over distinct prime divisors.I like the probabilistic
+<p>where the product is over distinct prime divisors. I like the probabilistic
 interpretation of this function gained by writing</p>
 <div class="math notranslate nohighlight">
 \[\frac{\phi(n)}{n} = \prod_{p|n} \bigg( 1 - \frac{1}{p} \bigg)\]</div>
@@ -138,11 +164,13 @@ It is not additive or multiplicative but will be important in the Prime Number T
 \[D(f,s)D(g,s) = \sum_{n \geq 1} h(n)n^{-s} = \sum_{n \geq 1}\sum_{de=n}f(d)g(e)n^{-s}.\]</div>
 <p>When <span class="math notranslate nohighlight">\(f\)</span> is multiplicative notice that unique prime factorization yields</p>
 <div class="math notranslate nohighlight">
-\[D(f,s) = \prod_p \sum_{\nu &gt;= 0} \bigg( f(p^{\nu}) p^{-\nu s} \bigg).\]</div>
-<p>We also have some identities to handle explicitly. Define the Riemann-zeta function as
-<span class="math notranslate nohighlight">\(\zeta(s) = \sum_{n \geq 1} n^{-s} = D(1,s)\)</span>. Then</p>
+\[D(f,s) = \prod_p \sum_{\nu \geq 0} \bigg( f(p^{\nu}) p^{-\nu s} \bigg).\]</div>
+<p>An important series is the Riemann-zeta function,</p>
 <div class="math notranslate nohighlight">
-\[\zeta(s) = D(1,s) \sum_{n \geq 1} = \frac{1}{n^s}.\]</div>
+\[\zeta(s) = \sum_{n \geq 1} n^{-s} = D(1,s) = \prod_p \frac{1}{1 - p^{-s}}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[D(\mu, s) = \frac{1}{\zeta(s)}.\]</div>
 <p>This can be proved from that identity involving <span class="math notranslate nohighlight">\(\sum_{d|n} \mu(d)\)</span> we saw earlier. Another
 identity of interest is this proposition.</p>
 <div class="admonition-proposition admonition">

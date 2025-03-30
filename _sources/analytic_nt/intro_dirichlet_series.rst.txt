@@ -11,16 +11,54 @@ completely additive if the rule holds for all :math:`m,n`. Same rule for
 multiplicative but for the product :math:`mn`.
 
 
-:math:`\nu(n)` is the distinct number of prime divisors. 
-:math:`\Omega(n)` is the number of prime divisors not necessarily distinct.
+:math:`\nu(n)` is the distinct number of prime divisors. This is completely multiplicative.
 
 
-:math:`d(n) = \sum_{d|n} n` is the divisor function.
-can be shown that :math:`d(n) = O(n^{\epsilon})` for any :math:`\epsilon>0`. 
-Showing :math:`d(n) = O(\sqrt{n})` is easier, just notice that for any pair of divisors
-of :math:`n`, one of the partners is at most :math:`\sqrt{n}`.
+:math:`\Omega(n)` is the number of prime divisors not necessarily distinct. Also multiplicative.
 
-Mobius function :math:`\mu(n)` has the rule :math:`\mu(1)=1` and 
+
+:math:`d(n) = \sum_{d|n} n` is the divisor function. This is multiplicative, since
+any divisor of :math:`mn` can be split into two relatively prime parts that are divisors for 
+:math:`m` and :math:`n` alone. An interesting approximation is this that,
+
+.. admonition:: Proposition
+
+	for any :math:`\epsilon>0` we have :math:`d(n) = O(n^{\epsilon})`.
+
+This result can be improved, but we don't want to go too far.
+
+The case that :math:`d(n) = O(\sqrt{n})` is pretty easy, just notice that for any
+pair whose product is :math:`n`, one of the partners is at most :math:`\sqrt{n}`.
+
+
+To tackle the general case we can 'localize' the problem to the prime divisors of :math:`n = p_1^{a_1}\ldots p_k^{a_k}`.
+We fix an :math:`\epsilon>0` and a prime :math:`p=p_j` dividing :math:`n` with power :math:`a=a_j`. We will find a
+constant :math:`C>0` such that
+
+.. math::
+
+	\frac{d(p)}{p^{a \epsilon}} = \frac{a+1}{p^{a \epsilon}} \leq C
+
+where the constant :math:`C` depends only on :math:`\epsilon`. It suffices to do this since :math:`d` is multiplicative,
+we can later take the product of all such :math:`C` to bound :math:`d(n)/n^{\epsilon}`.
+
+We split our work into cases. If :math:`p > e^{1/\epsilon}` then :math:`p^{\epsilon} > e`, so
+
+.. math::
+
+	\frac{a+1}{p^{a \epsilon}} \leq \bigg( \frac{e}{p^\epsilon} \bigg)^a  \leq 1
+
+where we used that :math:`e^a \geq a+1` using the Taylor series expansion of :math:`e^x`. For all the other,
+smaller primes, we have 
+
+.. math::
+
+	\frac{a+1}{p^{a \epsilon}} \leq \frac{a+1}{2^{a \epsilon}} \to 0
+
+as :math:`a \to \infty`. Thus we may find a positive constant that bounds this expression uniformly for all :math:`a \geq 0`. We set our
+constant :math:`C` to be the maximum of this number and 1 :math:`\blacksquare`. 
+
+:math:`\mu(n)` is the Mobius function. It has :math:`\mu(1)=1` and 
 
 .. math::
 	
@@ -29,11 +67,16 @@ Mobius function :math:`\mu(n)` has the rule :math:`\mu(1)=1` and
 		0 & \text{otherwise.}
 	\end{cases}
 
+
 It can be shown rather easily that :math:`\sum_{d|n} \mu(d) = 0` with the exception that
 :math:`\mu(1)=1`. This can be applied to show the Mobius inversion formula,
 
-.. math::
-	f(n) = \sum_{d|n} g(n) \quad \forall n  \iff g(n) = \sum_{d|n}\mu(d)f(n/d) \quad \forall n.
+.. admonition:: Theorem
+
+	If :math:`f,g` are arithmetic functions then 
+
+	.. math::
+		f(n) = \sum_{d|n} g(n) \quad \forall n  \iff g(n) = \sum_{d|n}\mu(d)f(n/d) \quad \forall n.
 
 
 Euler phi :math:`\phi(n)` is defined by 
@@ -42,7 +85,7 @@ Euler phi :math:`\phi(n)` is defined by
 
 	\phi(n) = n \prod_{p|n}\bigg( 1 - \frac{1}{p} \bigg) = |\mathbb{Z}_n^*|
 
-where the product is over distinct prime divisors.I like the probabilistic 
+where the product is over distinct prime divisors. I like the probabilistic 
 interpretation of this function gained by writing
 
 .. math::
@@ -55,8 +98,6 @@ it was not divisible by any prime :math:`p` in the factorization of :math:`n`.
 
 The von Mangoldt function :math:`\Lambda(p^a) = \log p` for prime powers, and :math:`0` otherwise.
 It is not additive or multiplicative but will be important in the Prime Number Theorem.
-
-
 
 ++++++++++++++++++++++++
 Formal Dirichlet Series
@@ -78,14 +119,21 @@ When :math:`f` is multiplicative notice that unique prime factorization yields
 
 .. math::
 	
-	D(f,s) = \prod_p \sum_{\nu >= 0} \bigg( f(p^{\nu}) p^{-\nu s} \bigg).
+	D(f,s) = \prod_p \sum_{\nu \geq 0} \bigg( f(p^{\nu}) p^{-\nu s} \bigg).
 
-We also have some identities to handle explicitly. Define the Riemann-zeta function as
-:math:`\zeta(s) = \sum_{n \geq 1} n^{-s} = D(1,s)`. Then
+
+An important series is the Riemann-zeta function,
 
 .. math::
 
-	\zeta(s) = D(1,s) \sum_{n \geq 1} = \frac{1}{n^s}.
+	\zeta(s) = \sum_{n \geq 1} n^{-s} = D(1,s) = \prod_p \frac{1}{1 - p^{-s}}
+
+Then 
+
+.. math::
+
+
+	D(\mu, s) = \frac{1}{\zeta(s)}.
 
 
 This can be proved from that identity involving :math:`\sum_{d|n} \mu(d)` we saw earlier. Another
