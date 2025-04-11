@@ -113,6 +113,31 @@ Partial summation is a useful technique when dealing with arithmetic functions a
 
 		\sum_{n \leq x} a_n f(n) = A(x)f(x) + \int_1^x A(t)f'(t)\,dt.
 
+We will prove this by showing the integral is equal to :math:`A(x)f(x) - \sum_{n \leq x} a_nf(n)`. Denoting
+the integer part of :math:`x` as :math:`[x]`, 
+
+.. math::
+	
+	\begin{align}
+	\int_1^x A(t)f'(t)\,dt
+	&= \int_1^x A(t)f'(t)dt\\
+	&= \sum_{k < [x]} \int_k^{k+1} A(k)f'(t)\,dt + \int_{[x]}^x A(x)f'(t)\,dt \\
+	&= \sum_{k < [x]} A(k)(f(k+1) - f(k)) + A(x)(f(x)-f([x])) \\
+	&= \sum_{n < [x]} a_n(f([x]) - f(n)) + \sum_{n \leq x}a_n(f(x)-f([x])) \\
+	&= \sum_{n \leq x} a_n(f(x) - f(n)) \\
+	&= A(x)f(x) - \sum_{n \leq x} a_nf(n) \quad \blacksquare.
+	\end{align}
+
+This has some cool applications. I think Chebyshev used this to show that
+:math:`\pi(x) = \Theta(\frac{x}{\log x})`. Taking :math:`a_n=1` and :math:`f(x)=1/x`, 
+one can obtain the estimate
+
+.. math::
+
+	\sum_{n \leq x} \frac{1}{n} = \log x + O(1).
+
+Actually the error term can be shown to converge as :math:`x \to \infty`. This
+is denoted as :math:`\gamma` and is called Euler's constant.
 
 ++++++++++++++++++++++++
 Formal Dirichlet Series
