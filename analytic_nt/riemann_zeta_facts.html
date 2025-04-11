@@ -102,7 +102,7 @@
 <p>where the integral on the right hand side is an analytic function for <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span>.</p>
 </div>
 <p>This yields an analytic continuation for <span class="math notranslate nohighlight">\(\zeta(s)\)</span> for the region <span class="math notranslate nohighlight">\(\sigma &gt; 0,\, s \neq 1\)</span>. This also shows
-<span class="math notranslate nohighlight">\(\zeta(s)\)</span> has a simple pole at <span class="math notranslate nohighlight">\(s=1\)</span> of residue <span class="math notranslate nohighlight">\(\lim_{s\to 1^+}\zeta(s) = 1\)</span>.</p>
+<span class="math notranslate nohighlight">\(\zeta(s)\)</span> has a simple pole at <span class="math notranslate nohighlight">\(s=1\)</span> of residue <span class="math notranslate nohighlight">\(\lim_{s\to 1^+}(s-1)\zeta(s) = 1\)</span>.</p>
 <p>Apply <a class="reference internal" href="intro_dirichlet_series.html#abel-partial-summation-series"><span class="std std-ref">this formula</span></a> with <span class="math notranslate nohighlight">\(a_n=1\)</span> to obtain that,
 for <span class="math notranslate nohighlight">\(\sigma &gt; 1\)</span>, we have</p>
 <div class="math notranslate nohighlight">
@@ -112,9 +112,22 @@ for <span class="math notranslate nohighlight">\(\sigma &gt; 1\)</span>, we have
         &amp;= \frac{s}{s-1} - s \int_1^\infty \frac{\{x\}}{x^{s+1}}\,dx .
 \end{align}\end{split}\]</div>
 <p>where we used that <span class="math notranslate nohighlight">\([x] = x - \{ x \}\)</span>. To see that the integral is analytic on <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span> one may apply
-the Cauchy-Riemann equations, applying Leibniz rule to differentiate with respect to <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(t\)</span>.
-Notice that the integrand is discontinuous only on integers, so Riemann integrability applies.
+the Cauchy-Riemann equations, applying Leibniz rule to differentiate the real and imaginary parts
+with respect to <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(t\)</span>. Notice that the integrand is discontinuous only on integers, so Riemann integrability applies.
 One might also apply <a class="reference internal" href="../complex_analysis/integration.html#morera"><span class="std std-ref">Morera’s Theorem</span></a> with Fubini.</p>
+<div class="admonition-proposition admonition">
+<p class="admonition-title">Proposition</p>
+<p><span class="math notranslate nohighlight">\(-\frac{\zeta'}{\zeta}(s)\)</span> is analytic on <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span> except for a simple pole at <span class="math notranslate nohighlight">\(s=1\)</span> with residue <span class="math notranslate nohighlight">\(1\)</span>.</p>
+</div>
+<p>We know <span class="math notranslate nohighlight">\(-\frac{\zeta'}{\zeta}(s)\)</span> is analytic on this region because <span class="math notranslate nohighlight">\(\zeta(s)\)</span> is non-zero when <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span>.
+By the previous proposition both <span class="math notranslate nohighlight">\(\zeta\)</span> and <span class="math notranslate nohighlight">\(\zeta'\)</span> can be taken to be analytic fuctions on <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span>
+with the exception of <span class="math notranslate nohighlight">\(s=1\)</span>.</p>
+<p>We just need to check the pole. Write <span class="math notranslate nohighlight">\(\zeta(s)(s-1) = sf(s)\)</span> for some function
+<span class="math notranslate nohighlight">\(f\)</span> analytic on <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span>. Differentiating both sides and rearranging yields</p>
+<div class="math notranslate nohighlight">
+\[-(s-1)\frac{\zeta'}{\zeta}(s) = -\frac{f'(s)}{\zeta(s)} - \frac{f(s)}{\zeta(s)} + 1.\]</div>
+<p>Now take <span class="math notranslate nohighlight">\(\lim_{s \to 1^+}\)</span>, the right hand side resolves to 1 because <span class="math notranslate nohighlight">\(\zeta(s)\)</span> blows up.</p>
+<p>For this proposition interpret the result as for formal Dirichlet series.</p>
 <div class="admonition-proposition admonition">
 <p class="admonition-title">Proposition</p>
 <div class="math notranslate nohighlight">
