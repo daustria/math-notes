@@ -35,7 +35,7 @@ for :math:`\sigma > 1`, we have
 where we used that :math:`[x] = x - \{ x \}`. To see that the integral is analytic on :math:`\sigma > 0` one may apply 
 the Cauchy-Riemann equations, applying Leibniz rule to differentiate the real and imaginary parts
 with respect to :math:`\sigma` and :math:`t`. Notice that the integrand is discontinuous only on integers, so Riemann integrability applies.
-One might also apply :ref:`Morera's Theorem <morera>` with Fubini.
+One might also apply :ref:`Morera's Theorem <morera>` with Fubini :math:`\blacksquare`.
 
 .. admonition:: Proposition
 
@@ -52,7 +52,7 @@ We just need to check the pole. Write :math:`\zeta(s)(s-1) = sf(s)` for some fun
 
 	-(s-1)\frac{\zeta'}{\zeta}(s) = -\frac{f'(s)}{\zeta(s)} - \frac{f(s)}{\zeta(s)} + 1.
 
-Now take :math:`\lim_{s \to 1^+}`, the right hand side resolves to 1 because :math:`\zeta(s)` blows up.
+Now take :math:`\lim_{s \to 1^+}`, the right hand side resolves to 1 because :math:`\zeta(s)` blows up :math:`\blacksquare`.
 
 
 For this proposition interpret the result as for formal Dirichlet series.
