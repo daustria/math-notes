@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>On the Riemann-Zeta function &#8212; math notes 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Primer on Dirichlet Series" href="intro_dirichlet_series.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">math notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Real Analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../real_analysis/inv_function_theorem.html">The Inverse Function Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../real_analysis/taylors_theorem_remainder.html">Taylor’s Theorem with Remainder</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Complex Analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../complex_analysis/integration.html">Contour Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../complex_analysis/integration_power_series.html">Integration and Differentiability</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Analytic Number Theory</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="discontinuous_integral.html">A Discontinuous Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_dirichlet_series.html">Primer on Dirichlet Series</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">On the Riemann-Zeta function</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="intro_dirichlet_series.html" title="previous chapter">Primer on Dirichlet Series</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="on-the-riemann-zeta-function">
+<h1>On the Riemann-Zeta function<a class="headerlink" href="#on-the-riemann-zeta-function" title="Permalink to this headline">¶</a></h1>
+<p>The zeta function is defined as</p>
+<div class="math notranslate nohighlight">
+\[\zeta(s) = \sum_{n \geq 1} n^{-s},\quad \sigma = \Re(s) &gt; 1.\]</div>
+<div class="admonition-proposition admonition">
+<p class="admonition-title">Proposition</p>
+<p>On <span class="math notranslate nohighlight">\(\sigma\)</span> &gt; 1 we have</p>
+<div class="math notranslate nohighlight">
+\[\zeta(s) = \frac{s}{s-1} + s\int_1^{\infty} \frac{\{x\}}{x^{s+1}}\,dx\]</div>
+<p>where the integral on the right hand side is an analytic function for <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span>.</p>
+</div>
+<p>This yields an analytic continuation for <span class="math notranslate nohighlight">\(\zeta(s)\)</span> for the region <span class="math notranslate nohighlight">\(\sigma &gt; 0,\, s \neq 1\)</span>. This also shows
+<span class="math notranslate nohighlight">\(\zeta(s)\)</span> has a simple pole at <span class="math notranslate nohighlight">\(s=1\)</span> of residue <span class="math notranslate nohighlight">\(\lim_{s\to 1^+}\zeta(s) = 1\)</span>.</p>
+<p>The coefficients of the <span class="math notranslate nohighlight">\(\zeta\)</span> function are all <span class="math notranslate nohighlight">\(1\)</span>.
+Apply <a class="reference internal" href="intro_dirichlet_series.html#abel-partial-summation-series"><span class="std std-ref">this formula</span></a> with <span class="math notranslate nohighlight">\(a_n=1\)</span> to obtain that,
+for <span class="math notranslate nohighlight">\(\sigma &gt; 1\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+        \zeta(s) &amp;= s \int_1^\infty \frac{[x]}{x^{s+1}}\,dx \\
+        &amp;= s \int_1^\infty x^{-s}\,dx - s \int_1^\infty \frac{\{x\}}{x^{s+1}}\,dx \\
+        &amp;= \frac{s}{s-1} - s \int_1^\infty \frac{\{x\}}{x^{s+1}}\,dx .
+\end{align}\end{split}\]</div>
+<p>where we used that <span class="math notranslate nohighlight">\([x] = x - \{ x \}\)</span>. To see that the integral is analytic on <span class="math notranslate nohighlight">\(\sigma &gt; 0\)</span> one may apply
+the Cauchy-Riemann equations. Notice that the integrand is discontinuous only on the integers, so Riemann integrability applies.
+One might also apply <a class="reference internal" href="../complex_analysis/integration.html#morera"><span class="std std-ref">Morera’s Theorem</span></a> with Fubini.</p>
+<div class="admonition-proposition admonition">
+<p class="admonition-title">Proposition</p>
+<div class="math notranslate nohighlight">
+\[D(\Lambda, s) = \sum_{n \geq 1} \frac{\Lambda(n)}{n^s} = -\frac{\zeta '}{\zeta}(s)\,ds\]</div>
+<p>where <span class="math notranslate nohighlight">\(-\zeta'(s) = \sum_{n \geq 1} (\log n) n^{-s}\)</span>.</p>
+</div>
+<p>We write the proposition in the form</p>
+<div class="math notranslate nohighlight">
+\[D(\Lambda, s) D(1, s) = -\zeta'(s)\]</div>
+<p>and proving this identity amounts to showing that <span class="math notranslate nohighlight">\(\log n = \sum_{d|n} \Lambda (d)\)</span> for
+each <span class="math notranslate nohighlight">\(n\)</span>. This is straightforward,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{d|n} \Lambda (d) = \sum_{p^a|n} \log p = \sum_{p|n} e \log p = \log p_1^{e_1} \ldots p_n^{e_n} = \log n\]</div>
+<p>where summations are over prime powers or distinct primes dividing <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/analytic_nt/riemann_zeta_facts.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

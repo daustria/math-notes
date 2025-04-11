@@ -99,6 +99,21 @@ it was not divisible by any prime :math:`p` in the factorization of :math:`n`.
 The von Mangoldt function :math:`\Lambda(p^a) = \log p` for prime powers, and :math:`0` otherwise.
 It is not additive or multiplicative but will be important in the Prime Number Theorem.
 
+Partial summation is a useful technique when dealing with arithmetic functions and series.
+
+.. _abel-partial-summation:
+
+.. admonition:: Theorem
+
+	
+	Let :math:`a_n` be a sequence of complex numbers and :math:`f` be :math:`C^1` on :math:`[1,x]`. 
+	Define :math:`A(x) = \sum_{n \leq x} a_n`. Then we have
+
+	.. math::
+
+		\sum_{n \leq x} a_n f(n) = A(x)f(x) + \int_1^x A(t)f'(t)\,dt.
+
+
 ++++++++++++++++++++++++
 Formal Dirichlet Series
 ++++++++++++++++++++++++
@@ -136,29 +151,32 @@ Then
 	D(\mu, s) = \frac{1}{\zeta(s)}.
 
 
-This can be proved from that identity involving :math:`\sum_{d|n} \mu(d)` we saw earlier. Another
-identity of interest is this proposition.
+This can be proved from that identity involving :math:`\sum_{d|n} \mu(d)` we saw earlier. 
 
-.. admonition:: Proposition
+Partial summation can help when discussing Dirichlet series as analytic functions.
 
+.. _abel-partial-summation-series:
+
+.. admonition:: Theorem 
+
+	In the setting of partial summation, suppose that for :math:`A(x) = O(x^{\delta})`,	
+
+	For :math:`\Re(s)> \delta` we have
 
 	.. math::
 
-		D(\Lambda, s) = \sum_{n \geq 1} \frac{\Lambda(n)}{n^s} = -\frac{\zeta '}{\zeta}(s)\,ds
+		\sum_{n \geq 1} \frac{a_n}{n^{-s}} = s \int_1^\infty \frac{A(t)}{t^{s+1}}\,dt.
 
-	where :math:`-\zeta'(s) = \sum_{n \geq 1} (\log n) n^{-s}`. 
-
-We write the proposition in the form
+Simply apply the partial summation theorem with :math:`f(x) = x^{-s}` and we get
 
 .. math::
 
-	D(\Lambda, s) D(1, s) = -\zeta'(s)
+	\sum_{n \leq x} \frac{a_n}{n^{-s}} = A(x)x^{-s} + s \int_1^x \frac{A(t)}{t^{s+1}}\,dt.
 
-and proving this identity amounts to showing that :math:`\log n = \sum_{d|n} \Lambda (d)` for 
-each :math:`n`. This is straightforward,
+Taking :math:`x \to \infty` yields the desired result. Note that the :math:`A(x)x^{-s}=O(x^{\delta - \Re(s)})` 
+which will vanish in the limit. Here we have :math:`f: \mathbb{R} \to \mathbb{C}`, so
+one might wonder how we got the above identity. Simply write :math:`f(s) = u(s) + i v(s)`, 
+apply partial summation for :math:`u,v` separately, and then add them up :math:`\blacksquare`.
 
-.. math::
-	\sum_{d|n} \Lambda (d) = \sum_{p^a|n} \log p = \sum_{p|n} e \log p = \log p_1^{e_1} \ldots p_n^{e_n} = \log n
 
-where summations are over prime powers or distinct primes dividing :math:`n` :math:`\blacksquare`.
 

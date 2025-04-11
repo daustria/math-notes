@@ -16,6 +16,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="On the Riemann-Zeta function" href="riemann_zeta_facts.html" />
     <link rel="prev" title="A Discontinuous Integral" href="discontinuous_integral.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -56,6 +57,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#formal-dirichlet-series">Formal Dirichlet Series</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="riemann_zeta_facts.html">On the Riemann-Zeta function</a></li>
 </ul>
 
 <div class="relations">
@@ -63,6 +65,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="discontinuous_integral.html" title="previous chapter">A Discontinuous Integral</a></li>
+      <li>Next: <a href="riemann_zeta_facts.html" title="next chapter">On the Riemann-Zeta function</a></li>
   </ul></li>
 </ul>
 </div>
@@ -153,6 +156,14 @@ interpretation of this function gained by writing</p>
 it was not divisible by any prime <span class="math notranslate nohighlight">\(p\)</span> in the factorization of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>The von Mangoldt function <span class="math notranslate nohighlight">\(\Lambda(p^a) = \log p\)</span> for prime powers, and <span class="math notranslate nohighlight">\(0\)</span> otherwise.
 It is not additive or multiplicative but will be important in the Prime Number Theorem.</p>
+<p>Partial summation is a useful technique when dealing with arithmetic functions and series.</p>
+<div class="admonition-theorem admonition" id="abel-partial-summation">
+<p class="admonition-title">Theorem</p>
+<p>Let <span class="math notranslate nohighlight">\(a_n\)</span> be a sequence of complex numbers and <span class="math notranslate nohighlight">\(f\)</span> be <span class="math notranslate nohighlight">\(C^1\)</span> on <span class="math notranslate nohighlight">\([1,x]\)</span>.
+Define <span class="math notranslate nohighlight">\(A(x) = \sum_{n \leq x} a_n\)</span>. Then we have</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n \leq x} a_n f(n) = A(x)f(x) + \int_1^x A(t)f'(t)\,dt.\]</div>
+</div>
 </div>
 <div class="section" id="formal-dirichlet-series">
 <h2>Formal Dirichlet Series<a class="headerlink" href="#formal-dirichlet-series" title="Permalink to this headline">¶</a></h2>
@@ -171,22 +182,22 @@ It is not additive or multiplicative but will be important in the Prime Number T
 <p>Then</p>
 <div class="math notranslate nohighlight">
 \[D(\mu, s) = \frac{1}{\zeta(s)}.\]</div>
-<p>This can be proved from that identity involving <span class="math notranslate nohighlight">\(\sum_{d|n} \mu(d)\)</span> we saw earlier. Another
-identity of interest is this proposition.</p>
-<div class="admonition-proposition admonition">
-<p class="admonition-title">Proposition</p>
+<p>This can be proved from that identity involving <span class="math notranslate nohighlight">\(\sum_{d|n} \mu(d)\)</span> we saw earlier.</p>
+<p>Partial summation can help when discussing Dirichlet series as analytic functions.</p>
+<div class="admonition-theorem admonition" id="abel-partial-summation-series">
+<p class="admonition-title">Theorem</p>
+<p>In the setting of partial summation, suppose that for <span class="math notranslate nohighlight">\(A(x) = O(x^{\delta})\)</span>,</p>
+<p>For <span class="math notranslate nohighlight">\(\Re(s)&gt; \delta\)</span> we have</p>
 <div class="math notranslate nohighlight">
-\[D(\Lambda, s) = \sum_{n \geq 1} \frac{\Lambda(n)}{n^s} = -\frac{\zeta '}{\zeta}(s)\,ds\]</div>
-<p>where <span class="math notranslate nohighlight">\(-\zeta'(s) = \sum_{n \geq 1} (\log n) n^{-s}\)</span>.</p>
+\[\sum_{n \geq 1} \frac{a_n}{n^{-s}} = s \int_1^\infty \frac{A(t)}{t^{s+1}}\,dt.\]</div>
 </div>
-<p>We write the proposition in the form</p>
+<p>Simply apply the partial summation theorem with <span class="math notranslate nohighlight">\(f(x) = x^{-s}\)</span> and we get</p>
 <div class="math notranslate nohighlight">
-\[D(\Lambda, s) D(1, s) = -\zeta'(s)\]</div>
-<p>and proving this identity amounts to showing that <span class="math notranslate nohighlight">\(\log n = \sum_{d|n} \Lambda (d)\)</span> for
-each <span class="math notranslate nohighlight">\(n\)</span>. This is straightforward,</p>
-<div class="math notranslate nohighlight">
-\[\sum_{d|n} \Lambda (d) = \sum_{p^a|n} \log p = \sum_{p|n} e \log p = \log p_1^{e_1} \ldots p_n^{e_n} = \log n\]</div>
-<p>where summations are over prime powers or distinct primes dividing <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+\[\sum_{n \leq x} \frac{a_n}{n^{-s}} = A(x)x^{-s} + s \int_1^x \frac{A(t)}{t^{s+1}}\,dt.\]</div>
+<p>Taking <span class="math notranslate nohighlight">\(x \to \infty\)</span> yields the desired result. Note that the <span class="math notranslate nohighlight">\(A(x)x^{-s}=O(x^{\delta - \Re(s)})\)</span>
+which will vanish in the limit. Here we have <span class="math notranslate nohighlight">\(f: \mathbb{R} \to \mathbb{C}\)</span>, so
+one might wonder how we got the above identity. Simply write <span class="math notranslate nohighlight">\(f(s) = u(s) + i v(s)\)</span>,
+apply partial summation for <span class="math notranslate nohighlight">\(u,v\)</span> separately, and then add them up <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
 </div>
 </div>
 

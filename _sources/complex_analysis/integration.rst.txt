@@ -236,6 +236,7 @@ This result is enough to prove the general version of Cauchy's integral formula.
 
 Thus :math:`f` being differentiable once implies differentiability of all orders. So if :math:`f` has an antiderivative then :math:`f` itself is analytic. Recall from the :ref:`first theorem <antiderivative-path-ind-loop-vanish>` that the existance of an antiderivative is equivalent to two other conditions relating to contour integrals of :math:`f`. This is basically the content of Morera's Theorem which we now state.
 
+.. _morera:
 .. admonition:: Morera's Theorem
 
 	Let :math:`f` be continuous in a domain :math:`D`. Suppose that all loop integrals vanish. Then :math:`f` is analytic on :math:`D`.
