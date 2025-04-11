@@ -153,7 +153,8 @@ Then
 
 This can be proved from that identity involving :math:`\sum_{d|n} \mu(d)` we saw earlier. 
 
-Partial summation can help when discussing Dirichlet series as analytic functions.
+Now we discuss analyticity of Dirichlet functions. Note that in this context 
+we use :math:`s` to denote complex variables and often write :math:`s = \sigma + it`.
 
 .. _abel-partial-summation-series:
 
@@ -165,13 +166,13 @@ Partial summation can help when discussing Dirichlet series as analytic function
 
 	.. math::
 
-		\sum_{n \geq 1} \frac{a_n}{n^{-s}} = s \int_1^\infty \frac{A(t)}{t^{s+1}}\,dt.
+		\sum_{n \geq 1} \frac{a_n}{n^s} = s \int_1^\infty \frac{A(t)}{t^{s+1}}\,dt.
 
 Simply apply the partial summation theorem with :math:`f(x) = x^{-s}` and we get
 
 .. math::
 
-	\sum_{n \leq x} \frac{a_n}{n^{-s}} = A(x)x^{-s} + s \int_1^x \frac{A(t)}{t^{s+1}}\,dt.
+	\sum_{n \leq x} \frac{a_n}{n^s} = A(x)x^{-s} + s \int_1^x \frac{A(t)}{t^{s+1}}\,dt.
 
 Taking :math:`x \to \infty` yields the desired result. Note that the :math:`A(x)x^{-s}=O(x^{\delta - \Re(s)})` 
 which will vanish in the limit. Here we have :math:`f: \mathbb{R} \to \mathbb{C}`, so

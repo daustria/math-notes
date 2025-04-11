@@ -183,17 +183,18 @@ Define <span class="math notranslate nohighlight">\(A(x) = \sum_{n \leq x} a_n\)
 <div class="math notranslate nohighlight">
 \[D(\mu, s) = \frac{1}{\zeta(s)}.\]</div>
 <p>This can be proved from that identity involving <span class="math notranslate nohighlight">\(\sum_{d|n} \mu(d)\)</span> we saw earlier.</p>
-<p>Partial summation can help when discussing Dirichlet series as analytic functions.</p>
+<p>Now we discuss analyticity of Dirichlet functions. Note that in this context
+we use <span class="math notranslate nohighlight">\(s\)</span> to denote complex variables and often write <span class="math notranslate nohighlight">\(s = \sigma + it\)</span>.</p>
 <div class="admonition-theorem admonition" id="abel-partial-summation-series">
 <p class="admonition-title">Theorem</p>
 <p>In the setting of partial summation, suppose that for <span class="math notranslate nohighlight">\(A(x) = O(x^{\delta})\)</span>,</p>
 <p>For <span class="math notranslate nohighlight">\(\Re(s)&gt; \delta\)</span> we have</p>
 <div class="math notranslate nohighlight">
-\[\sum_{n \geq 1} \frac{a_n}{n^{-s}} = s \int_1^\infty \frac{A(t)}{t^{s+1}}\,dt.\]</div>
+\[\sum_{n \geq 1} \frac{a_n}{n^s} = s \int_1^\infty \frac{A(t)}{t^{s+1}}\,dt.\]</div>
 </div>
 <p>Simply apply the partial summation theorem with <span class="math notranslate nohighlight">\(f(x) = x^{-s}\)</span> and we get</p>
 <div class="math notranslate nohighlight">
-\[\sum_{n \leq x} \frac{a_n}{n^{-s}} = A(x)x^{-s} + s \int_1^x \frac{A(t)}{t^{s+1}}\,dt.\]</div>
+\[\sum_{n \leq x} \frac{a_n}{n^s} = A(x)x^{-s} + s \int_1^x \frac{A(t)}{t^{s+1}}\,dt.\]</div>
 <p>Taking <span class="math notranslate nohighlight">\(x \to \infty\)</span> yields the desired result. Note that the <span class="math notranslate nohighlight">\(A(x)x^{-s}=O(x^{\delta - \Re(s)})\)</span>
 which will vanish in the limit. Here we have <span class="math notranslate nohighlight">\(f: \mathbb{R} \to \mathbb{C}\)</span>, so
 one might wonder how we got the above identity. Simply write <span class="math notranslate nohighlight">\(f(s) = u(s) + i v(s)\)</span>,
