@@ -164,6 +164,25 @@ Define <span class="math notranslate nohighlight">\(A(x) = \sum_{n \leq x} a_n\)
 <div class="math notranslate nohighlight">
 \[\sum_{n \leq x} a_n f(n) = A(x)f(x) + \int_1^x A(t)f'(t)\,dt.\]</div>
 </div>
+<p>We will prove this by showing the integral is equal to <span class="math notranslate nohighlight">\(A(x)f(X) - \sum_{n \leq x} a_nf(n)\)</span>. Denoting
+the integer part of <span class="math notranslate nohighlight">\(x\)</span> as <span class="math notranslate nohighlight">\([x]\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\int_1^x A(t)f'(t)\,dt
+&amp;= \int_1^x A(t)f'(t)dt\\
+&amp;= \sum_{k &lt; [x]} \int_k^{k+1} A(k)f'(t)\,dt + \int_{[x]}^x A(x)f'(t)\,dt \\
+&amp;= \sum_{k &lt; [x]} A(k)(f(k+1) - f(k)) + A(x)(f(x)-f([x])) \\
+&amp;= \sum_{n &lt; [x]} a_n(f([x]) - f(n)) + \sum_{n \leq x}a_n(f(x)-f([x])) \\
+&amp;= \sum_{n \leq x} a_n(f(x) - f(n)) \\
+&amp;= A(x)f(x) - \sum_{n \leq x} a_nf(n) \quad \blacksquare.
+\end{align}\end{split}\]</div>
+<p>This has some cool applications. I think Chebyshev used this to show that
+<span class="math notranslate nohighlight">\(\pi(x) = \Theta(\frac{x}{\log x})\)</span>. Taking <span class="math notranslate nohighlight">\(a_n=1\)</span> and <span class="math notranslate nohighlight">\(f(x)=1/x\)</span>,
+one can obtain the estimate</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n \leq x} \frac{1}{n} = \log x + O(1).\]</div>
+<p>Actually the error term can be shown to converge as <span class="math notranslate nohighlight">\(x \to \infty\)</span>. This
+is denoted as <span class="math notranslate nohighlight">\(\gamma\)</span> and is called Euler’s constant.</p>
 </div>
 <div class="section" id="formal-dirichlet-series">
 <h2>Formal Dirichlet Series<a class="headerlink" href="#formal-dirichlet-series" title="Permalink to this headline">¶</a></h2>
