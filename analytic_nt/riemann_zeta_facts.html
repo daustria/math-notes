@@ -119,6 +119,52 @@ with respect to <span class="math notranslate nohighlight">\(\sigma\)</span> and
 One might also apply <a class="reference internal" href="../complex_analysis/integration.html#morera"><span class="std std-ref">Morera’s Theorem</span></a> with Fubini <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
 <div class="admonition-proposition admonition">
 <p class="admonition-title">Proposition</p>
+<p><span class="math notranslate nohighlight">\(\zeta(s) \neq 0\)</span> for <span class="math notranslate nohighlight">\(\sigma = \Re(s) \geq 1\)</span>.</p>
+</div>
+<p>The proof for <span class="math notranslate nohighlight">\(\sigma &gt; 1\)</span> is an easy application of the triangle inequality, so we discuss only <span class="math notranslate nohighlight">\(\sigma = 1, s \neq 1\)</span>.</p>
+<div class="admonition-lemma admonition">
+<p class="admonition-title">Lemma</p>
+<p>For <span class="math notranslate nohighlight">\(\sigma &gt; 1, t \in \mathbb{R}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\Re \log \zeta(\sigma + it) = \sum_{n \geq 2} \frac{\Lambda(n)}{n^\sigma \log n} \cos (t \log n).\]</div>
+</div>
+<p>We have, for <span class="math notranslate nohighlight">\(s = \sigma + it\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\log \zeta(s) = \log \prod_p ( 1 - p^{-s} )^{-1} = \sum_p -\log (1-p^{-s})\]</div>
+<p>Where the index is over unique primes. Now we apply the Taylor series identity</p>
+<div class="math notranslate nohighlight">
+\[-\log(1-x) = \sum_{n \geq 1} \frac{x^n}{n}\]</div>
+<p>to obtain</p>
+<div class="math notranslate nohighlight">
+\[\log \zeta(s) = \sum_p \sum_{n \geq 1} \frac{1}{np^{ns}}.\]</div>
+<p>Notice this summation is absolutely convergent because <span class="math notranslate nohighlight">\(|\log \zeta(s)| \leq \log \zeta(\sigma) &lt; \infty\)</span>.
+So instead we can write the summation over prime powers,</p>
+<div class="math notranslate nohighlight">
+\[\log \zeta(s) = \sum_{x=p^n, n \geq 1} \frac{\log p}{\log x} \frac{1}{x^{ns}} = \sum_{n \geq 2} \frac{\Lambda(n)}{n^s \log n}.\]</div>
+<p>Note the von Mangoldt function <span class="math notranslate nohighlight">\(\Lambda(n)\)</span> vanishes on non-prime powers, allowing us to write the summation over all <span class="math notranslate nohighlight">\(n \geq 2\)</span>.
+Comparing real parts of this identity completes the proof <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+<div class="admonition-lemma admonition">
+<p class="admonition-title">Lemma</p>
+<p>For <span class="math notranslate nohighlight">\(\sigma &gt; 1, t \in \mathbb{R}\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[|\zeta(\sigma)^3 \zeta(\sigma + it)^4 \zeta(\sigma + 2it)| \geq 1.\]</div>
+<p>Consequently, <span class="math notranslate nohighlight">\(\zeta(1+it) \neq 0\)</span> for any <span class="math notranslate nohighlight">\(t\)</span> by a simple continuity argument.</p>
+</div>
+<p>Taking the logarithm of both sides, it suffices to prove</p>
+<div class="math notranslate nohighlight">
+\[\Re (3 \log \zeta(\sigma) + 4 \log \zeta(\sigma + it) + \log \zeta(\sigma + 2it)) \geq 0.\]</div>
+<p>Using the previous lemma, this reads as</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n \geq 2} \frac{\Lambda(n)}{n^s \log n} (3 + 4 \cos (t \log n) + \cos (2t \log n)) \geq 0.\]</div>
+<p>Notice that the term on the left is positive, so we would be done if the function <span class="math notranslate nohighlight">\(3 + 4 \cos x + \cos 2x\)</span>
+is non-negative. This can be proven easily with calculus. We find the minimum by
+looking at where the derivative vanishes,</p>
+<div class="math notranslate nohighlight">
+\[-4 \sin x - 2 \sin 2x = 0 \iff -\sin x = \sin x \cos x \iff x = \pi + 2\pi \mathbb{Z}.\]</div>
+<p>But at <span class="math notranslate nohighlight">\(x = \pi\)</span>, we have <span class="math notranslate nohighlight">\(4 \cos x + \cos 2x = -3\)</span>. Hence <span class="math notranslate nohighlight">\(3 + 4 \cos x + \cos 2x \geq 0\)</span>.
+This completes the proof of this lemma and also the proposition <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+<div class="admonition-proposition admonition">
+<p class="admonition-title">Proposition</p>
 <p><span class="math notranslate nohighlight">\(-\frac{\zeta'}{\zeta}(s)\)</span> is analytic on <span class="math notranslate nohighlight">\(\sigma \geq 1\)</span> except for a simple pole at <span class="math notranslate nohighlight">\(s=1\)</span> with residue <span class="math notranslate nohighlight">\(1\)</span>.</p>
 </div>
 <p>By analytic continuation, both <span class="math notranslate nohighlight">\(\zeta\)</span> and <span class="math notranslate nohighlight">\(\zeta'\)</span> can be taken to be analytic on <span class="math notranslate nohighlight">\(\sigma &gt; 0, s \neq 1\)</span>.
@@ -128,18 +174,21 @@ rearranging yields</p>
 <div class="math notranslate nohighlight">
 \[-(s-1)\frac{\zeta'}{\zeta}(s) = -\frac{f'(s)}{\zeta(s)} - \frac{f(s)}{\zeta(s)} + 1.\]</div>
 <p>Now take <span class="math notranslate nohighlight">\(\lim_{s \to 1^+}\)</span>, the right hand side resolves to 1 because <span class="math notranslate nohighlight">\(\zeta(s)\)</span> blows up <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
-<p>For this proposition interpret the result as for formal Dirichlet series.</p>
 <div class="admonition-proposition admonition">
 <p class="admonition-title">Proposition</p>
+<p>On <span class="math notranslate nohighlight">\(\sigma &gt; 1\)</span>, we have the following Dirichlet series representation,</p>
 <div class="math notranslate nohighlight">
-\[D(\Lambda, s) = \sum_{n \geq 1} \frac{\Lambda(n)}{n^s} = -\frac{\zeta '}{\zeta}(s)\,ds\]</div>
+\[-\frac{\zeta '}{\zeta}(s) = D(\Lambda, s) = \sum_{n \geq 1} \frac{\Lambda(n)}{n^s}.\]</div>
 <p>where <span class="math notranslate nohighlight">\(-\zeta'(s) = \sum_{n \geq 1} (\log n) n^{-s}\)</span>.</p>
 </div>
 <p>We write the proposition in the form</p>
 <div class="math notranslate nohighlight">
 \[D(\Lambda, s) D(1, s) = -\zeta'(s)\]</div>
-<p>and proving this identity amounts to showing that <span class="math notranslate nohighlight">\(\log n = \sum_{d|n} \Lambda (d)\)</span> for
-each <span class="math notranslate nohighlight">\(n\)</span>. This is straightforward,</p>
+<p>By absolute convergence on <span class="math notranslate nohighlight">\(\sigma &gt; 1\)</span>, the product on the left hand side converges to the Cauchy product,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n \geq 1}\sum_{d|n} \frac{\Lambda(d)}{n^s}\]</div>
+<p>It suffices to show that the coefficients of this Dirichlet series evalutes to <span class="math notranslate nohighlight">\(\log n\)</span>
+for each <span class="math notranslate nohighlight">\(n \geq 1\)</span>. This is straightforward,</p>
 <div class="math notranslate nohighlight">
 \[\sum_{d|n} \Lambda (d) = \sum_{p^a|n} \log p = \sum_{p|n} e \log p = \log p_1^{e_1} \ldots p_n^{e_n} = \log n\]</div>
 <p>where summations are over prime powers or distinct primes dividing <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
