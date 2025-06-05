@@ -192,6 +192,39 @@ for each <span class="math notranslate nohighlight">\(n \geq 1\)</span>. This is
 <div class="math notranslate nohighlight">
 \[\sum_{d|n} \Lambda (d) = \sum_{p^a|n} \log p = \sum_{p|n} e \log p = \log p_1^{e_1} \ldots p_n^{e_n} = \log n\]</div>
 <p>where summations are over prime powers or distinct primes dividing <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+<p>The next few propositions will be studying <span class="math notranslate nohighlight">\(\zeta(s)\)</span> on the rectangle <span class="math notranslate nohighlight">\(R_T\)</span> with corners
+<span class="math notranslate nohighlight">\(2-iT, 2+iT, \sigma_0 + iT, \sigma_0 -iT\)</span>, where <span class="math notranslate nohighlight">\(\sigma_0 = 1 - \frac{1}{\log T}, T \geq e^2\)</span>.
+This will be important for proving the Prime Number Theorem</p>
+<div class="admonition-proposition admonition">
+<p class="admonition-title">Proposition</p>
+<p>On <span class="math notranslate nohighlight">\(R_T\)</span> we have <span class="math notranslate nohighlight">\(\zeta(s) - \frac{1}{s-1} = O(\log T)\)</span>.</p>
+</div>
+<p>Using the Euler-Maclaurin summation formula (an improvement over Abel summation) we have the following formula for <span class="math notranslate nohighlight">\(\zeta(s)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\zeta(s) = \sum_{m=1}^{n-1}\frac{1}{m^s} + \frac{n^{-s}}{2} + \frac{n^{1-s}}{s-1} - s\int_{n^\infty} \frac{x-[x]-\frac{1}{2}}{x^{s+1}}\,dx.\]</div>
+<p>Writing <span class="math notranslate nohighlight">\(s = \sigma + it\)</span>, we obtain the bound</p>
+<div class="math notranslate nohighlight">
+\[\bigg|\zeta(s) - \frac{1}{s-1}\bigg| \leq \sum_{m=1}^{n-1}\frac{1}{m^\sigma} + \frac{1}{2n^\sigma} + \int_1^n x^{-\sigma}\,dx + \frac{s}{2}\int_{n^\infty} \frac{dx}{x^{\sigma+1}}.\]</div>
+<p>To see this, notice that the new integral is the negative of the expression it replaced, it evaluates to <span class="math notranslate nohighlight">\(\frac{n^{1-s}-1}{1-s}\)</span>. Also the last integral simplifies because
+the numerator is at most <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> in magnitude.</p>
+<p>Now, by the integral test, or by observing a certain Riemann sum with left endpoints, we note that</p>
+<div class="math notranslate nohighlight">
+\[\sum_{m=1}^{n-1} \frac{1}{m^\sigma} &lt; 1 + \int_1^n \frac{dx}{x^{\sigma}}.\]</div>
+<p>So overall, our bound is</p>
+<div class="math notranslate nohighlight">
+\[1 + 2\int_1^n \frac{dx}{x^\sigma} + \frac{1}{2n^\sigma} +  \frac{|s|}{2}\int_{n}^{\infty}\frac{dx}{x^{\sigma+1}}\]</div>
+<p>We can choose any <span class="math notranslate nohighlight">\(n\)</span> we like, here we will use <span class="math notranslate nohighlight">\(n=[T]\)</span>. Ignoring the <span class="math notranslate nohighlight">\(\frac{1}{2n^\sigma}\)</span> term for now, we note that by directly evaluating
+the integral we have</p>
+<div class="math notranslate nohighlight">
+\[1 + 2\int_1^n \frac{dx}{x^\sigma} + \frac{|s|}{2}\int_{n}^{\infty}\frac{dx}{x^{\sigma+1}} \leq \frac{2n^{1-\sigma}}{1-\sigma} + \frac{|s|n^{-\sigma}}{2\sigma}.\]</div>
+<p>Also, we have <span class="math notranslate nohighlight">\(\sigma &gt; \frac{1}{2}\)</span> and <span class="math notranslate nohighlight">\(|s| &lt; 2+T\)</span> in <span class="math notranslate nohighlight">\(R_T\)</span>. This lets us replace <span class="math notranslate nohighlight">\(|s|/2\sigma\)</span> with <span class="math notranslate nohighlight">\(2+T\)</span>. Also we may replace
+the <span class="math notranslate nohighlight">\(n=[T]\)</span> terms with <span class="math notranslate nohighlight">\(T\)</span> itself. The resulting expression differs from the original only by a constant scale factor. Thus our estimate is now</p>
+<div class="math notranslate nohighlight">
+\[T^{1-\sigma}\bigg( \frac{2}{1-\sigma} + \frac{2+T}{T}\bigg).\]</div>
+<p>It suffices to prove that this expression is <span class="math notranslate nohighlight">\(O(\log T)\)</span>. The <span class="math notranslate nohighlight">\(\frac{1}{2n\sigma}\)</span> term we ignored earlier is easily seen to be <span class="math notranslate nohighlight">\(O(\log T)\)</span>, so we can
+just focus on the above expression.</p>
+<p>Note that since <span class="math notranslate nohighlight">\(\sigma \geq 1 - \frac{1}{\log T}\)</span> we have <span class="math notranslate nohighlight">\(1-\sigma \leq \frac{1}{\log T}\)</span>. From this, we observe that the term inside the brackets is
+<span class="math notranslate nohighlight">\(O(\log T) + O(1) = O(\log T)\)</span>. Also the term outside is <span class="math notranslate nohighlight">\(T^{1-\sigma} \leq T^{\frac{1}{\log T}} = e\)</span>. So this whole expression is <span class="math notranslate nohighlight">\(O(\log T)\)</span>, as required.</p>
 </div>
 
 
